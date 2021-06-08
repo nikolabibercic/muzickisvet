@@ -1,15 +1,27 @@
 /************************
 google font
 ************************/
-
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 /************************
 variables
 ************************/
-
+$primaryColor: #007ec3;
+$white: white;
+$transition: .3s ease;
+$padding: 50px 0;
+$fontFamily: 'PT Sans', sans-serif;
+$fontSize: 14px;
+$transition: .5s ease;
 /************************
 mixins
 ************************/
-
+@mixin flex($justify,$align,$direction) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: $direction;
+}
 /************************
 bacis styles
 ************************/
@@ -17,4 +29,81 @@ bacis styles
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+}
+body {
+    font-family: $fontFamily;
+    line-height: 1.6;
+    font-size: $fontSize;
+}
+ul {
+    list-style-type: none;
+}
+a {
+    text-decoration: none;
+}
+.container {
+    width: 60%;
+    margin: auto;
+}
+/************************
+header
+************************/
+header {
+    background-color: $primaryColor;
+    color: $white;
+    font-weight: 700;
+    nav {
+        @include flex(space-between, center, row);
+        padding: 20px 0;
+        font-size: 1.2rem;
+        .logo {
+            a {
+                color: $white;
+            }
+        }
+        ul {
+            @include flex(space-between, center, row);
+            @media(max-width: 767px){
+                @include flex(space-between, center, column);
+                position: fixed;
+                width: 100%;
+                background: #2c3e50;
+                top: 88px;
+                left: -100%;
+                text-align: center;
+                padding: 30px 0;
+            }
+            li {
+                padding: 0 10px;
+                @media(max-width: 767px){
+                    padding: 10px;
+                }
+                a {
+                    color: $white;
+                }
+            }
+        }
+        .checkBtn {
+            font-size: 30px;
+            color: $white;
+            background-color: $primaryColor;
+            cursor: pointer;
+            display: none;
+            @media(max-width: 767px){
+                display: block;
+            }
+        }                
+    }
+    hgroup {
+        color:white;
+        background: linear-gradient(rgba(black,.6),rgba(black,.6)), url(../site-images/header.jpg);
+        background-position: center;
+        background-size: cover;
+        height: 60vh;
+        text-transform: uppercase;
+        @include flex(center, center, row);
+        @media(max-width: 767px){
+            height: 80vh;
+        }
+    }
 }
