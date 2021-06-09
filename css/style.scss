@@ -12,6 +12,7 @@ $padding: 50px 0;
 $fontFamily: 'PT Sans', sans-serif;
 $fontSize: 14px;
 $transition: .5s ease;
+$secondaryColor:#E0E0E0;
 /************************
 mixins
 ************************/
@@ -21,6 +22,25 @@ mixins
     justify-content: $justify;
     align-items: $align;
     flex-direction: $direction;
+}
+@mixin hr($color,$width: 150px) {
+    background: $color;
+    width: $width;
+    padding: 1px 0;
+    margin: auto auto 20px auto;
+    content: "";
+}
+@mixin btn($color: $primaryColor, $colorHover: $white, $borderColor: $primaryColor) {
+    padding: 10px 30px;
+    border: 3px solid $borderColor;
+    color: $color;
+    background: $white;
+    font-size: 1.3rem;
+    border-radius: 10px;
+    &:hover {
+        background: $color;
+        color: $colorHover;
+    }
 }
 /************************
 bacis styles
@@ -106,4 +126,76 @@ header {
             height: 80vh;
         }
     }
+}
+/************************
+log in form
+************************/
+.logInRegisterForm {
+    padding: $padding;
+    height: 100%;
+    @media(max-width: 767px) {
+        padding: 10px 0;
+        width: 100%;
+    }
+    h2{
+        text-align: center;
+        font-size: 3rem;
+        color: $primaryColor;
+        margin-bottom: 20px;
+    }
+    form {
+        background: $secondaryColor;
+        padding: $padding;
+        @include flex(space-between,center,column);
+        input {
+            width: 50%;
+            margin-bottom: 20px;
+            padding: 10px 0;
+            padding-left: 10px;
+            font-family: 'Playfair Display', serif;
+            border: 3px solid $primaryColor;
+            text-align: center;
+            color: black;
+            font-size: 16px;
+            border-radius: 10px;
+            @media(max-width: 767px) {
+                width: 80%;
+            }
+        }
+        button {
+            @include btn;
+            @media(max-width: 767px) {
+                margin-bottom: 20px;
+            }
+        }
+        p {
+            margin-top: 30px;
+            color: black;
+            font-size: 14px;
+            a {
+                color: $primaryColor;
+                font-weight: 700;
+                font-size: 16px;
+                text-decoration: underline;
+            }
+        }
+    }
+}
+/************************
+logg in success message
+************************/
+.logInRegisterSuccess {
+    text-align: center;
+    background: green;
+    color: $white;
+    width: 100%;
+}
+/************************
+logg in unsuccess message
+************************/
+.logInRegisterUnsuccess {
+    text-align: center;
+    background: red;
+    color: $white;
+    width: 100%;
 }

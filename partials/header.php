@@ -15,16 +15,23 @@
                 <a href="index.php" id="logo">Logo sajta</a>
             </div>
             <ul id="navBarUl">
-                <li><a href="view-log-in.php">Ulogujte se</a></li>
+                <?php if(isset($_SESSION['user'])): ?>
+                    <li><a href="controller/log-out.php">Izlogujte se</a></li>
+                <?php else: ?>
+                    <li><a href="view-log-in.php">Ulogujte se</a></li>
+                <?php endif; ?>
                 <li><a href="view-music-adds.php">Oglasi</a></li>
                 <li><a href="">Forum</a></li>
                 <li><a href="view-contact.php">Kontakt</a></li>
+                <?php if(isset($_SESSION['user'])): ?>
+                    <li><a href="view-user.php"><?php echo $_SESSION['user']->email; ?></a></li>
+                <?php endif; ?>
             </ul>
             <div class="checkBtn" id="checkBtn">
                 <i class="fas fa-bars"></i>
             </div>
         </nav>
         <hgroup>
-            <h1 id="h1">dsadsadsadsa</h1>
+            <h1 id="h1"></h1>
         </hgroup>
     </header>

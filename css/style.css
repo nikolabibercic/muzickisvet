@@ -173,4 +173,118 @@ header hgroup {
     height: 80vh;
   }
 }
+
+/************************
+log in form
+************************/
+.logInRegisterForm {
+  padding: 50px 0;
+  height: 100%;
+}
+
+@media (max-width: 767px) {
+  .logInRegisterForm {
+    padding: 10px 0;
+    width: 100%;
+  }
+}
+
+.logInRegisterForm h2 {
+  text-align: center;
+  font-size: 3rem;
+  color: #007ec3;
+  margin-bottom: 20px;
+}
+
+.logInRegisterForm form {
+  background: #E0E0E0;
+  padding: 50px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.logInRegisterForm form input {
+  width: 50%;
+  margin-bottom: 20px;
+  padding: 10px 0;
+  padding-left: 10px;
+  font-family: 'Playfair Display', serif;
+  border: 3px solid #007ec3;
+  text-align: center;
+  color: black;
+  font-size: 16px;
+  border-radius: 10px;
+}
+
+@media (max-width: 767px) {
+  .logInRegisterForm form input {
+    width: 80%;
+  }
+}
+
+.logInRegisterForm form button {
+  padding: 10px 30px;
+  border: 3px solid #007ec3;
+  color: #007ec3;
+  background: white;
+  font-size: 1.3rem;
+  border-radius: 10px;
+}
+
+.logInRegisterForm form button:hover {
+  background: #007ec3;
+  color: white;
+}
+
+@media (max-width: 767px) {
+  .logInRegisterForm form button {
+    margin-bottom: 20px;
+  }
+}
+
+.logInRegisterForm form p {
+  margin-top: 30px;
+  color: black;
+  font-size: 14px;
+}
+
+.logInRegisterForm form p a {
+  color: #007ec3;
+  font-weight: 700;
+  font-size: 16px;
+  text-decoration: underline;
+}
+
+/************************
+logg in success message
+************************/
+.logInRegisterSuccess {
+  text-align: center;
+  background: green;
+  color: white;
+  width: 100%;
+}
+
+/************************
+logg in unsuccess message
+************************/
+.logInRegisterUnsuccess {
+  text-align: center;
+  background: red;
+  color: white;
+  width: 100%;
+}
 /*# sourceMappingURL=style.css.map */
