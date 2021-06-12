@@ -36,6 +36,11 @@ CREATE TABLE sf_tag(
 	name varchar(50) character set utf8 not null unique
 );
 
+CREATE TABLE sf_currency(
+	currency_id int AUTO_INCREMENT PRIMARY KEY,
+	name varchar(50) character set utf8 not null unique
+);
+
 CREATE TABLE ads(
 	ad_id int AUTO_INCREMENT PRIMARY KEY,
 	title varchar(50) character set utf8 not null,
@@ -45,9 +50,11 @@ CREATE TABLE ads(
 	ad_category_id int not null,
 	ad_type_id int not null,
 	price int not null,
+	currency_id int not null,
 	seen int not null,
 	FOREIGN KEY (ad_category_id) REFERENCES sf_ad_category(ad_category_id),
-	FOREIGN KEY (ad_type_id) REFERENCES sf_ad_type(ad_type_id)
+	FOREIGN KEY (ad_type_id) REFERENCES sf_ad_type(ad_type_id),
+	FOREIGN KEY (currency_id) REFERENCES sf_currency(currency_id)
 );
 
 CREATE TABLE ad_tag(
@@ -75,6 +82,9 @@ insert into sf_ad_category values(null,'Bend');
 
 insert into sf_ad_type values(null,'Standard');
 insert into sf_ad_type values(null,'Premium');
+
+insert into sf_currency values(null,'EUR');
+insert into sf_currency values(null,'RSD');
 
 insert into sf_tag values(null,'Pop');
 insert into sf_tag values(null,'Rock');

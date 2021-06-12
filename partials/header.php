@@ -24,7 +24,7 @@
                 <li><a href="">Forum</a></li>
                 <li><a href="view-contact.php">Kontakt</a></li>
                 <?php if(isset($_SESSION['user'])): ?>
-                    <li><a href="view-user.php"><?php echo $_SESSION['user']->email; ?></a></li>
+                    <li><a href="view-user.php"><?php echo $_SESSION['user']->name; ?></a></li>
                 <?php endif; ?>
             </ul>
             <div class="checkBtn" id="checkBtn">

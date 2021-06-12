@@ -13,6 +13,7 @@ $fontFamily: 'PT Sans', sans-serif;
 $fontSize: 14px;
 $transition: .5s ease;
 $secondaryColor:#E0E0E0;
+$grey:#f2f2f2;
 /************************
 mixins
 ************************/
@@ -100,6 +101,11 @@ header {
                 }
                 a {
                     color: $white;
+                    &:hover {
+                        background: $white;
+                        color: $primaryColor;
+                        padding: 5px;
+                    }
                 }
             }
         }
@@ -123,7 +129,7 @@ header {
         text-transform: uppercase;
         @include flex(center, center, row);
         @media(max-width: 767px){
-            height: 80vh;
+            height: 60vh;
         }
     }
 }
@@ -198,4 +204,45 @@ logg in / register unsuccess message
     background: red;
     color: $white;
     width: 100%;
+}
+/************************
+search form
+************************/
+.searchForm {
+    padding: $padding;
+    form{
+        @include flex(center,center,row);
+        @media(max-width: 767px) {
+            @include flex(center,center,column);
+        }
+        input {
+            border: 2px solid $primaryColor;
+            width: 60%;
+            height: 40px;
+            text-align: center;
+            @media(max-width: 767px) {
+                width: 100%;
+                margin-top: 10px;
+            }
+            &:hover {
+                border: 3px solid $primaryColor;
+            }
+        }
+        button {
+            border: 2px solid $primaryColor;
+            height: 40px;
+            width: 10%;
+            margin-left: 5px;
+            background-color: $grey;
+            font-weight: 700;
+            color: $primaryColor;
+            @media(max-width: 767px) {
+                width: 30%;
+                margin-top: 10px;
+            }
+            &:hover {
+                border: 3px solid $primaryColor;
+            }
+        }
+    }
 }

@@ -129,6 +129,12 @@ header nav ul li a {
   color: white;
 }
 
+header nav ul li a:hover {
+  background: white;
+  color: #007ec3;
+  padding: 5px;
+}
+
 header nav .checkBtn {
   font-size: 30px;
   color: white;
@@ -170,7 +176,7 @@ header hgroup {
 
 @media (max-width: 767px) {
   header hgroup {
-    height: 80vh;
+    height: 60vh;
   }
 }
 
@@ -286,5 +292,89 @@ logg in / register unsuccess message
   background: red;
   color: white;
   width: 100%;
+}
+
+/************************
+search form
+************************/
+.searchForm {
+  padding: 50px 0;
+}
+
+.searchForm form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+@media (max-width: 767px) {
+  .searchForm form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.searchForm form input {
+  border: 2px solid #007ec3;
+  width: 60%;
+  height: 40px;
+  text-align: center;
+}
+
+@media (max-width: 767px) {
+  .searchForm form input {
+    width: 100%;
+    margin-top: 10px;
+  }
+}
+
+.searchForm form input:hover {
+  border: 3px solid #007ec3;
+}
+
+.searchForm form button {
+  border: 2px solid #007ec3;
+  height: 40px;
+  width: 10%;
+  margin-left: 5px;
+  background-color: #f2f2f2;
+  font-weight: 700;
+  color: #007ec3;
+}
+
+@media (max-width: 767px) {
+  .searchForm form button {
+    width: 30%;
+    margin-top: 10px;
+  }
+}
+
+.searchForm form button:hover {
+  border: 3px solid #007ec3;
 }
 /*# sourceMappingURL=style.css.map */

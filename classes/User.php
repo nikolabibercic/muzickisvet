@@ -26,10 +26,10 @@
             }       
         }
 
-        public function registerUser($email,$password){
-            $sql = "insert into users values(null,'',?,?,'','','')";
+        public function registerUser($name,$email,$password){
+            $sql = "insert into users values(null,?,?,?,'','','')";
             $query = $this->conn->prepare($sql);
-            $checkInsert = $query->execute([$email,$password]);
+            $checkInsert = $query->execute([$name,$email,$password]);
 
             if($checkInsert){
                 $this->userRegistered = true;
