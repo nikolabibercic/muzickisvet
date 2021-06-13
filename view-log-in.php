@@ -20,11 +20,11 @@
 <?php endif; ?>
 
 <!-- contact form -->
-<section class="logInRegisterForm container" id="logInRegisterForm">
+<section class="logInRegisterForm container" id="logInForm">
     <h2>Ulogujte se</h2>
     <form action="controller/log-in.php" method="POST" autocomplete="on">
-        <input type="email" name="email" placeholder="Email">
-        <input type="password" name="password" placeholder="Password">
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="password" name="password" placeholder="Password" required>
         <button>Ulogujte se</button>
         <p>Nemate nalog? <a href="view-register.php">Registrujte se</a></p>
     </form>

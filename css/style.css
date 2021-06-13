@@ -135,6 +135,17 @@ header nav ul li a:hover {
   padding: 5px;
 }
 
+header nav ul .insertAd {
+  padding: 0 5px;
+  background: #8cc63f;
+}
+
+header nav ul .insertAd a:hover {
+  background: #8cc63f;
+  color: white;
+  padding: 0 5px;
+}
+
 header nav .checkBtn {
   font-size: 30px;
   color: white;

@@ -108,6 +108,17 @@ header {
                     }
                 }
             }
+            .insertAd {
+                padding: 0 5px;
+                background: #8cc63f;
+                a {
+                    &:hover {
+                        background: #8cc63f;
+                        color: $white;
+                        padding: 0 5px;
+                    }
+                }
+            }
         }
         .checkBtn {
             font-size: 30px;

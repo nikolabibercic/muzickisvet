@@ -27,7 +27,7 @@
         }
 
         public function registerUser($name,$email,$password){
-            $sql = "insert into users values(null,?,?,?,'','','')";
+            $sql = "insert into users values(null,?,?,?,'','','',CURRENT_TIMESTAMP())";
             $query = $this->conn->prepare($sql);
             $checkInsert = $query->execute([$name,$email,$password]);
 

@@ -5,7 +5,8 @@ CREATE TABLE users(
     password varchar(100) character set utf8 not null,
     country varchar(100) character set utf8 null,
     city varchar(100) character set utf8 null,
-    profile_image varchar(100) character set utf8 null
+    profile_image varchar(100) character set utf8 null,
+	date_created datetime not null
 );
 
 CREATE TABLE sf_role(
@@ -52,6 +53,7 @@ CREATE TABLE ads(
 	price int not null,
 	currency_id int not null,
 	seen int not null,
+	date_created datetime not null,
 	FOREIGN KEY (ad_category_id) REFERENCES sf_ad_category(ad_category_id),
 	FOREIGN KEY (ad_type_id) REFERENCES sf_ad_type(ad_type_id),
 	FOREIGN KEY (currency_id) REFERENCES sf_currency(currency_id)
@@ -79,6 +81,7 @@ insert into sf_ad_category values(null,'Gudački instrumenti');
 insert into sf_ad_category values(null,'Duvački instrumenti');
 insert into sf_ad_category values(null,'Perkusije');
 insert into sf_ad_category values(null,'Bend');
+insert into sf_ad_category values(null,'Studio');
 
 insert into sf_ad_type values(null,'Standard');
 insert into sf_ad_type values(null,'Premium');
@@ -98,5 +101,5 @@ insert into sf_tag values(null,'Electronic');
 -------------------------------------------------------------------------------------------------
 ---OPCIONI INSERTI
 -------------------------------------------------------------------------------------------------
-insert into users values(null,'Nikola Bibercic','nikolabibercic@gmail.com','123','','','');
+insert into users values(null,'Nikola Bibercic','nikolabibercic@gmail.com','123','','','',CURRENT_TIMESTAMP());
 insert into user_role values(null,1,1);
