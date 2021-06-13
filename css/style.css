@@ -388,4 +388,83 @@ search form
 .searchForm form button:hover {
   border: 3px solid #007ec3;
 }
+
+/************************
+insert ad form
+************************/
+.insertAdForm h2 {
+  text-align: center;
+  font-size: 3rem;
+  color: #007ec3;
+  margin-bottom: 20px;
+}
+
+.insertAdForm form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.insertAdForm form input, .insertAdForm form textarea, .insertAdForm form select {
+  margin-bottom: 20px;
+  border: 2px solid #007ec3;
+  font-size: 16px;
+  width: 60%;
+}
+
+.insertAdForm form input {
+  text-align: center;
+  height: 40px;
+}
+
+.insertAdForm form select {
+  text-align: center;
+  height: 40px;
+}
+
+.insertAdForm form h3 {
+  text-align: left;
+  font-size: 1rem;
+  color: #007ec3;
+  margin-bottom: 5px;
+}
+
+.insertAdForm form .uploadImage {
+  border: none;
+  margin-top: 10px;
+}
+
+.insertAdForm form button {
+  padding: 10px 30px;
+  border: 3px solid #007ec3;
+  color: #007ec3;
+  background: white;
+  font-size: 1.3rem;
+  border-radius: 10px;
+  border-radius: 0px;
+  margin-top: 20px;
+}
+
+.insertAdForm form button:hover {
+  background: #007ec3;
+  color: white;
+}
+
+@media (max-width: 767px) {
+  .insertAdForm form button {
+    margin-bottom: 20px;
+  }
+}
 /*# sourceMappingURL=style.css.map */

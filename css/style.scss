@@ -257,3 +257,49 @@ search form
         }
     }
 }
+/************************
+insert ad form
+************************/
+.insertAdForm {
+    h2{
+        text-align: center;
+        font-size: 3rem;
+        color: $primaryColor;
+        margin-bottom: 20px;
+    }
+    form {
+        @include flex(space-between,center,column);
+        input,textarea,select {
+            margin-bottom: 20px;
+            border: 2px solid $primaryColor;
+            font-size: 16px;
+            width: 60%;
+        }
+        input {
+            text-align: center;
+            height: 40px;
+        }
+        select {
+            text-align: center;
+            height: 40px;
+        }
+        h3 {
+            text-align: left;
+            font-size: 1rem;
+            color: $primaryColor;
+            margin-bottom: 5px;
+        }
+        .uploadImage {
+            border: none;
+            margin-top: 10px;
+        }
+        button {
+            @include btn;
+            border-radius: 0px;
+            margin-top: 20px;
+            @media(max-width: 767px) {
+                margin-bottom: 20px;
+            }
+        }
+    }
+}
