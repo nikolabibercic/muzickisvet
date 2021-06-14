@@ -39,10 +39,22 @@
             return $result;
         }
 
-        public function insertAd($title,$text,$countryId,$city,$categoryId,$price,$currencyId,$userId){
-            $sql = "insert into ads values(null,?,?,?,?,?,?,?,?,?,CURRENT_TIMESTAMP(),?) ";
+        public function selectAdTag(){
+            $sql = "select * 
+                    from sf_tag t
+                    order by t.tag_id ";
             $query = $this->conn->prepare($sql);
-            $check = $query->execute([$title,$text,$countryId,$city,$categoryId,1,$price,$currencyId,0,$userId]);
+            $query->execute();
+            
+            $result = $query->fetchAll(PDO::FETCH_OBJ);
+
+            return $result;
+        }
+
+        public function insertAd($title,$text,$countryId,$city,$categoryId,$price,$currencyId,$userId){
+            $sql = "insert into ads values(null,?,?,?,?,?,?,?,?,?,CURRENT_TIMESTAMP(),?,?) ";
+            $query = $this->conn->prepare($sql);
+            $check = $query->execute([$title,$text,$countryId,$city,$categoryId,1,$price,$currencyId,0,$userId,1]);
             $last_id = $this->conn->lastInsertId();
 
             if($check){

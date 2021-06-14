@@ -50,7 +50,16 @@
         <input class="uploadImage" type="file" name="file4">
         <h3>Slika 5 (opciono):</h3>
         <input class="uploadImage" type="file" name="file5">
-
+        
+        <h3>Atributi oglasa:</h3>
+        <section class="checkBox"> 
+            <?php  $result = $ad->selectAdTag(); foreach($result as $x):  ?>
+                <div>
+                    <input type="checkbox" name=<?php echo $x->name; ?> value=<?php echo $x->tag_id; ?> >
+                    <label for=<?php echo $x->name; ?>><?php echo ' '.$x->name; ?></label><br>
+                </div>
+            <?php endforeach; ?>
+        </section>
         <button type="submit" name="submit">Postavi oglas</button>
     </form>
 </section>

@@ -293,6 +293,24 @@ insert ad form
             border: none;
             margin-top: 10px;
         }
+        .checkBox {
+            border: 2px solid $primaryColor;
+            margin-top: 20px;
+            @include flex(space-between,center,row);
+            div {
+                width: 50%;
+                @include flex(space-between,center,row);
+                input {
+                    text-align: center;
+                    margin: 10px;
+                    width: 20%;
+                }
+                label {
+                    text-align: left;
+                    width: 50%;
+                }
+            }
+        }
         button {
             @include btn;
             border-radius: 0px;

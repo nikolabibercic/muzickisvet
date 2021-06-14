@@ -12,6 +12,18 @@
         $currencyId = $_POST['currencyId'];
         $userId = $_SESSION['user']->user_id;
 
+        $currencyId = $_POST['currencyId'];
+
+        $popId = $_POST['Pop'];
+        $rockId = $_POST['Rock'];
+        $folkId = $_POST['Folk'];
+        $jazzId = $_POST['Jazz'];
+        $metalId = $_POST['Metal'];
+        $rhythmBluesId = $_POST['Rhythm & blues (R&B)'];
+        $rapHipHopId = $_POST['Rap/Hip-hop'];
+        $funkSoulId = $_POST['Funk/Soul'];
+        $electronicId = $_POST['Electronic'];
+
         $image1 = $_FILES['file1'];
         $image2 = $_FILES['file2'];
         $image3 = $_FILES['file3'];
@@ -25,6 +37,7 @@
 
             $last_id = $ad->insertAd($title,$text,$countryId,$city,$categoryId,$price,$currencyId,$userId);
 
+            //Upload i insert slika oglasa
             if(isset($image1)){
                 $filePath = $upload->uploadImage($image1,'../uploads/');
                 $sql = "insert into ad_image values (null,?,?);";
@@ -58,6 +71,61 @@
                 $sql = "insert into ad_image values (null,?,?);";
                 $query = $upload->conn->prepare($sql);
                 $check = $query->execute([$last_id,$filePath]);
+            }
+
+            //Insert tagova/atributa oglasa
+            if(isset($popId)){
+                $sql = "insert into ad_tag values (null,?,?);";
+                $query = $upload->conn->prepare($sql);
+                $check = $query->execute([$last_id,$popId]);
+            }
+
+            if(isset($rockId)){
+                $sql = "insert into ad_tag values (null,?,?);";
+                $query = $upload->conn->prepare($sql);
+                $check = $query->execute([$last_id,$rockId]);
+            }
+
+            if(isset($folkId)){
+                $sql = "insert into ad_tag values (null,?,?);";
+                $query = $upload->conn->prepare($sql);
+                $check = $query->execute([$last_id,$folkId]);
+            }
+            
+            if(isset($jazzId)){
+                $sql = "insert into ad_tag values (null,?,?);";
+                $query = $upload->conn->prepare($sql);
+                $check = $query->execute([$last_id,$jazzId]);
+            }
+
+            if(isset($metalId)){
+                $sql = "insert into ad_tag values (null,?,?);";
+                $query = $upload->conn->prepare($sql);
+                $check = $query->execute([$last_id,$metalId]);
+            }
+
+            if(isset($rhythmBluesId)){
+                $sql = "insert into ad_tag values (null,?,?);";
+                $query = $upload->conn->prepare($sql);
+                $check = $query->execute([$last_id,$rhythmBluesId]);
+            }
+
+            if(isset($rapHipHopId)){
+                $sql = "insert into ad_tag values (null,?,?);";
+                $query = $upload->conn->prepare($sql);
+                $check = $query->execute([$last_id,$rapHipHopId]);
+            }
+
+            if(isset($funkSoulId)){
+                $sql = "insert into ad_tag values (null,?,?);";
+                $query = $upload->conn->prepare($sql);
+                $check = $query->execute([$last_id,$funkSoulId]);
+            }
+
+            if(isset($electronicId)){
+                $sql = "insert into ad_tag values (null,?,?);";
+                $query = $upload->conn->prepare($sql);
+                $check = $query->execute([$last_id,$electronicId]);
             }
 
             header("Location: ../view-insert-ad.php?adInserted={$user->adInserted}");

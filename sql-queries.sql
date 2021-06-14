@@ -47,6 +47,11 @@ CREATE TABLE sf_country(
 	name varchar(50) character set utf8 not null unique
 );
 
+CREATE TABLE sf_ad_status(
+	ad_status_id int AUTO_INCREMENT PRIMARY KEY,
+	name varchar(50) character set utf8 not null unique
+);
+
 CREATE TABLE ads(
 	ad_id int AUTO_INCREMENT PRIMARY KEY,
 	title varchar(50) character set utf8 not null,
@@ -60,11 +65,13 @@ CREATE TABLE ads(
 	seen int not null,
 	date_created datetime not null,
 	user_id int not null,
+	ad_status_id int not null,
 	FOREIGN KEY (country_id) REFERENCES sf_country(country_id),
 	FOREIGN KEY (ad_category_id) REFERENCES sf_ad_category(ad_category_id),
 	FOREIGN KEY (ad_type_id) REFERENCES sf_ad_type(ad_type_id),
 	FOREIGN KEY (currency_id) REFERENCES sf_currency(currency_id),
-	FOREIGN KEY (user_id) REFERENCES users(user_id)
+	FOREIGN KEY (user_id) REFERENCES users(user_id),
+	FOREIGN KEY (ad_status_id) REFERENCES sf_ad_status(ad_status_id)
 );
 
 CREATE TABLE ad_tag(
@@ -103,6 +110,9 @@ insert into sf_ad_type values(null,'Premium');
 
 insert into sf_currency values(null,'EUR');
 insert into sf_currency values(null,'RSD');
+
+insert into sf_ad_status values(null,'Active');
+insert into sf_ad_status values(null,'Inactive');
 
 insert into sf_country values(null,'Srbija');
 insert into sf_country values(null,'Hrvatska');
