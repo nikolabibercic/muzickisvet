@@ -389,6 +389,56 @@ search form
   border: 3px solid #007ec3;
 }
 
+.searchForm form .checkBox {
+  border: 2px solid #007ec3;
+  margin-top: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.searchForm form .checkBox div {
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.searchForm form .checkBox div input {
+  text-align: center;
+  margin: 10px;
+  width: 20%;
+}
+
+.searchForm form .checkBox div label {
+  text-align: left;
+  width: 50%;
+}
+
 /************************
 insert ad form
 ************************/
@@ -516,5 +566,241 @@ insert ad form
   .insertAdForm form button {
     margin-bottom: 20px;
   }
+}
+
+/************************
+ad display
+************************/
+.adDisplay {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.adDisplay hgroup {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.adDisplay .ad {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 50px 0;
+}
+
+@media (max-width: 767px) {
+  .adDisplay .ad {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 10px 0;
+  }
+}
+
+.adDisplay .ad img {
+  max-width: 40%;
+  height: 180px;
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+
+@media (max-width: 767px) {
+  .adDisplay .ad img {
+    max-width: 100%;
+    margin-bottom: 10px;
+  }
+}
+
+.adDisplay .ad div {
+  width: 60%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+@media (max-width: 767px) {
+  .adDisplay .ad div {
+    width: 100%;
+    text-align: justify;
+  }
+}
+
+.adDisplay .ad div .first {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 30px;
+}
+
+.adDisplay .ad div .first h2 {
+  margin-bottom: 10px;
+  color: #003368;
+  font-weight: 700;
+  font-size: 1.8rem;
+}
+
+.adDisplay .ad div .second {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+@media (max-width: 767px) {
+  .adDisplay .ad div .second {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.adDisplay .ad div .second #price {
+  color: red;
+  font-weight: 700;
+  border: 2px solid red;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+@media (max-width: 767px) {
+  .adDisplay .ad div .second #price {
+    margin-bottom: 10px;
+  }
+}
+
+.adDisplay .ad div .second #seen {
+  color: #003368;
+  font-weight: 700;
+  border: 2px solid #003368;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+@media (max-width: 767px) {
+  .adDisplay .ad div .second #seen {
+    margin-bottom: 10px;
+  }
+}
+
+.adDisplay .ad div .second #city {
+  color: #003368;
+  font-weight: 700;
+  border: 2px solid #003368;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+@media (max-width: 767px) {
+  .adDisplay .ad div .second #city {
+    margin-bottom: 10px;
+  }
+}
+
+.adDisplay hr {
+  color: #007ec3;
+  width: 100%;
 }
 /*# sourceMappingURL=style.css.map */

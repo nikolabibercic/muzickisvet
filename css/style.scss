@@ -6,13 +6,14 @@ google font
 variables
 ************************/
 $primaryColor: #007ec3;
+$secondaryColor: #003368;
 $white: white;
 $transition: .3s ease;
 $padding: 50px 0;
 $fontFamily: 'PT Sans', sans-serif;
 $fontSize: 14px;
 $transition: .5s ease;
-$secondaryColor:#E0E0E0;
+$secondaryColor2:#E0E0E0;
 $grey:#f2f2f2;
 /************************
 mixins
@@ -161,7 +162,7 @@ log in form
         margin-bottom: 20px;
     }
     form {
-        background: $secondaryColor;
+        background: $secondaryColor2;
         padding: $padding;
         @include flex(space-between,center,column);
         input {
@@ -255,6 +256,24 @@ search form
                 border: 3px solid $primaryColor;
             }
         }
+        .checkBox {
+            border: 2px solid $primaryColor;
+            margin-top: 20px;
+            @include flex(space-between,center,row);
+            div {
+                width: 50%;
+                @include flex(space-between,center,row);
+                input {
+                    text-align: center;
+                    margin: 10px;
+                    width: 20%;
+                }
+                label {
+                    text-align: left;
+                    width: 50%;
+                }
+            }
+        }
     }
 }
 /************************
@@ -319,5 +338,96 @@ insert ad form
                 margin-bottom: 20px;
             }
         }
+    }
+}
+/************************
+ad display
+************************/
+.adDisplay {
+    @include flex(space-between,center,column);
+    hgroup {
+        @include flex(space-between,flex-start,column);
+        width: 100%;
+        margin-top: 10px;
+    }
+    .ad {
+        @include flex(space-between,center,row);
+        width: 100%;
+        margin-bottom: 20px;
+        padding: $padding;
+        @media(max-width: 767px) {
+            @include flex(space-between,center,column);
+            padding: 10px 0;
+        }
+        img {
+            max-width: 40%;
+            height: 180px;
+            font-weight: 700;
+            font-size: 1.3rem;
+            @media(max-width: 767px) {
+                max-width: 100%;
+                margin-bottom: 10px;
+            }
+        }
+        div {
+            width: 60%;
+            @include flex(flex-start,flex-start,column);
+            @media(max-width: 767px) {
+                width: 100%;
+                text-align: justify;
+            }
+            .first {
+                width: 100%;
+                @include flex(flex-start,flex-start,column);
+                margin-bottom: 30px;
+                h2 {
+                    margin-bottom: 10px;
+                    color: $secondaryColor;
+                    font-weight: 700;
+                    font-size: 1.8rem;
+                }
+            }
+            .second {
+                width: 100%;
+                @include flex(space-between,flex-start,row);
+                @media(max-width: 767px) {
+                    @include flex(space-between,center,column);
+                }
+                #price {
+                    color: red;
+                    font-weight: 700;
+                    border: 2px solid red;
+                    border-radius: 5px;
+                    padding: 5px;
+                    @media(max-width: 767px) {
+                        margin-bottom: 10px;
+                    }
+                }
+                #seen {
+                    color: $secondaryColor;
+                    font-weight: 700;
+                    border: 2px solid $secondaryColor;
+                    border-radius: 5px;
+                    padding: 5px;
+                    @media(max-width: 767px) {
+                        margin-bottom: 10px;
+                    }
+                }
+                #city {
+                    color: $secondaryColor;
+                    font-weight: 700;
+                    border: 2px solid $secondaryColor;
+                    border-radius: 5px;
+                    padding: 5px;
+                    @media(max-width: 767px) {
+                        margin-bottom: 10px;
+                    }
+                }
+            }
+        }
+    }
+    hr {
+        color: $primaryColor;
+        width: 100%;
     }
 }

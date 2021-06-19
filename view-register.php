@@ -3,7 +3,7 @@
 <?php require 'partials/header.php'; ?>
 
 <!-- register form -->
-<section class="logInRegisterForm container" id="logInRegisterForm">
+<section class="logInRegisterForm container" id="RegisterForm">
     <h2>Registrujte se</h2>
     <form action="controller/register.php" method="POST" autocomplete="on">
         <input type="name" name="name" placeholder="Ime" required>

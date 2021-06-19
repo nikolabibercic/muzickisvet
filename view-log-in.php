@@ -26,7 +26,7 @@
         <input type="email" name="email" placeholder="Email" required>
         <input type="password" name="password" placeholder="Password" required>
         <button>Ulogujte se</button>
-        <p>Nemate nalog? <a href="view-register.php">Registrujte se</a></p>
+        <p>Nemate nalog? <a href="view-register.php#RegisterForm">Registrujte se</a></p>
     </form>
 </section>
 

@@ -18,12 +18,12 @@
                 <?php if(isset($_SESSION['user'])): ?>
                     <li><a href="controller/log-out.php">Izlogujte se</a></li>
                 <?php else: ?>
-                    <li><a href="view-log-in.php">Ulogujte se</a></li>
+                    <li><a href="view-log-in.php#logInForm">Ulogujte se</a></li>
                 <?php endif; ?>
                 <li><a href="view-music-adds.php">Oglasi</a></li>
                 <li><a href="">Forum</a></li>
                 <li><a href="view-contact.php">Kontakt</a></li>
-                <li class="insertAd"><a href="view-insert-ad.php">Postavi oglas</a></li>
+                <li class="insertAd"><a href="view-insert-ad.php">Postavite oglas</a></li>
                 <?php if(isset($_SESSION['user'])): ?>
                     <li><a href="view-user.php"><?php echo $_SESSION['user']->name; ?></a></li>
                 <?php endif; ?>
