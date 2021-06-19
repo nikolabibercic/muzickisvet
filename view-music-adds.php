@@ -9,7 +9,7 @@
         <hgroup>
             <p>ID oglasa: <?php echo $x->ad_id; ?></p>
         </hgroup>
-        <div class="ad">
+        <article class="ad">
             <?php  $result = $ad->selectAdFirstImage($x->ad_id); foreach($result as $y):  ?>
                 <img src=<?php echo 'uploads/'.$y->image_path; ?> alt="" >
             <?php endforeach; ?>
@@ -24,7 +24,7 @@
                     <p id="price">Cena: <?php echo $x->price.' '.$x->currency; ?></p>
                 </div>
             </div>
-        </div>
+        </article>
         <hr>
     <?php endforeach; ?>
 </section>
