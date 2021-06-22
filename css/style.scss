@@ -86,6 +86,10 @@ header {
         .logo {
             a {
                 color: $white;
+                img {
+                    width: 200px;
+                    height: 50px;
+                }
             }
         }
         ul {
@@ -228,54 +232,97 @@ search form
 .searchForm {
     padding: $padding;
     form{
-        @include flex(center,center,row);
-        @media(max-width: 767px) {
-            @include flex(center,center,column);
-        }
-        input {
-            border: 2px solid $primaryColor;
-            width: 60%;
-            height: 40px;
-            text-align: center;
+        .firstPartForm {
+            @include flex(center,center,row);
             @media(max-width: 767px) {
-                width: 100%;
-                margin-top: 10px;
+                @include flex(center,center,column);
             }
-            &:hover {
-                border: 3px solid $primaryColor;
-            }
-        }
-        button {
-            border: 2px solid $primaryColor;
-            height: 40px;
-            width: 10%;
-            margin-left: 5px;
-            background-color: $grey;
-            font-weight: 700;
-            color: $primaryColor;
-            @media(max-width: 767px) {
-                width: 30%;
-                margin-top: 10px;
-            }
-            &:hover {
-                border: 3px solid $primaryColor;
-            }
-        }
-        .checkBox {
-            border: 2px solid $primaryColor;
-            margin-top: 20px;
-            @include flex(space-between,center,row);
-            div {
-                width: 50%;
-                @include flex(space-between,center,row);
-                input {
-                    text-align: center;
-                    margin: 10px;
-                    width: 20%;
+            input {
+                border: 2px solid $primaryColor;
+                width: 60%;
+                height: 40px;
+                text-align: center;
+                @media(max-width: 767px) {
+                    width: 100%;
+                    margin-top: 10px;
                 }
-                label {
-                    text-align: left;
+                &:hover {
+                    border: 3px solid $primaryColor;
+                }
+            }
+            button {
+                border: 2px solid $primaryColor;
+                height: 40px;
+                width: 10%;
+                margin-left: 5px;
+                background-color: $grey;
+                font-weight: 700;
+                color: $primaryColor;
+                @media(max-width: 767px) {
+                    width: 30%;
+                    margin-top: 10px;
+                }
+                &:hover {
+                    border: 3px solid $primaryColor;
+                }
+            }
+        }
+        .secondPartForm {
+            @include flex(center,center,column);
+            @media(max-width: 767px) {
+                @include flex(center,center,column);
+            }
+            input {
+                border: 2px solid $primaryColor;
+                width: 60%;
+                height: 40px;
+                text-align: center;
+                @media(max-width: 767px) {
+                    width: 100%;
+                    margin-top: 10px;
+                }
+                &:hover {
+                    border: 3px solid $primaryColor;
+                }
+            }
+            #city {
+                width: 71%;
+                margin-top: 20px;
+                display: none;
+            }
+            #unhideExtraSearch {
+                color: red;
+                border: 2px solid red;
+                border-radius: 10px;
+                padding: 3px;
+                display: none;
+                margin-top: 20px;
+                &:hover {
+                    background-color: red;
+                    color: $white;
+                }
+            }
+            .checkBox {
+                border: 2px solid $primaryColor;
+                margin-top: 20px;
+                width: 71%;
+                @include flex(space-between,center,row);
+                display: none;
+                @media(max-width: 767px) {
+                    width: 100%;
+                }
+                div {
                     width: 50%;
+                    @include flex(space-between,center,row);
+                    input {
+                        text-align: center;
+                        margin: 10px;
+                        width: 20%;
+                    }
+                    label {
+                        text-align: left;
+                        width: 50%;
+                    }
                 }
             }
         }
@@ -286,6 +333,9 @@ insert ad form
 ************************/
 .insertAdForm {
     padding: $padding;
+    @media(max-width: 767px) {
+        width: 100%;
+    }
     h2{
         text-align: center;
         font-size: 3rem;
@@ -321,7 +371,12 @@ insert ad form
         .checkBox {
             border: 2px solid $primaryColor;
             margin-top: 20px;
+            margin-bottom: 20px;
+            width: 50%;
             @include flex(space-between,center,row);
+            @media(max-width: 767px) {
+                padding: 0 20px;
+            }
             div {
                 width: 50%;
                 @include flex(space-between,center,row);
@@ -352,19 +407,33 @@ ad display
 .adDisplay {
     @include flex(space-between,center,column);
     padding: $padding;
-    hgroup {
-        @include flex(space-between,flex-start,column);
-        width: 100%;
-        margin-top: 10px;
+    @media(max-width: 767px) {
+        width: 90%;
     }
     .ad {
         @include flex(space-between,center,row);
         width: 100%;
-        margin-bottom: 20px;
-        padding: $padding;
+        margin-bottom: 50px;
+        padding: 30px 30px;
+        border: 2px solid $primaryColor;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px $primaryColor;
         @media(max-width: 767px) {
             @include flex(space-between,center,column);
-            padding: 10px 0;
+        }
+        hgroup {
+            @include flex(space-between,flex-start,row);
+            width: 100%;
+            margin-bottom: 20px;
+            @media(max-width: 767px) {
+                @include flex(space-between,center,column);
+                padding: 10px 0;
+            }
+            p {
+                @media(max-width: 767px) {
+                    margin-bottom: 10px;
+                }
+            }
         }
         img {
             max-width: 40%;
@@ -386,19 +455,41 @@ ad display
             .first {
                 width: 100%;
                 @include flex(flex-start,flex-start,column);
-                margin-bottom: 30px;
                 h2 {
                     margin-bottom: 10px;
                     color: $secondaryColor;
                     font-weight: 700;
                     font-size: 1.8rem;
+                    @media(max-width: 767px) {
+                        font-size: 1.8rem;
+                        margin-bottom: 20px;
+                        text-align: center;
+                    }
+                }
+                p {
+                    font-size: 1.2rem;
+                }
+                @media(max-width: 767px) {
+                    @include flex(center,center,column);
+                }
+            }
+            .tags {
+                width: 100%;
+                margin-top: 20px;
+                @include flex(flex-start,center,row);
+                p {
+                    color: $primaryColor;
+                    font-weight: 700;
+                    font-size: 1.1rem;
+                    margin-left: 10px;
                 }
             }
             .second {
                 width: 100%;
+                margin-top: 30px;
                 @include flex(space-between,flex-start,row);
                 @media(max-width: 767px) {
-                    @include flex(space-between,center,column);
+                    @include flex(space-between,center,row);
                 }
                 #price {
                     color: red;
@@ -408,6 +499,7 @@ ad display
                     padding: 5px;
                     @media(max-width: 767px) {
                         margin-bottom: 10px;
+                        font-size: 12px;
                     }
                 }
                 #seen {
@@ -418,6 +510,7 @@ ad display
                     padding: 5px;
                     @media(max-width: 767px) {
                         margin-bottom: 10px;
+                        font-size: 12px;
                     }
                 }
                 #city {
@@ -428,14 +521,14 @@ ad display
                     padding: 5px;
                     @media(max-width: 767px) {
                         margin-bottom: 10px;
+                        font-size: 12px;
                     }
                 }
             }
         }
-    }
-    hr {
-        color: $primaryColor;
-        width: 100%;
+        &:hover {
+            transform: scale(1.1,1.1);
+        }
     }
 }
 /************************
@@ -448,9 +541,20 @@ footer {
     @include flex(space-between,center,column);   
     article {
         @include flex(space-between,center,column);
-        margin-bottom: 10px;
+        .footerUl {
+            @include flex(space-between,center,column);  
+            margin-bottom: 10px;
+            li {
+                padding: 0 30px;
+                margin-bottom: 5px;
+                a {
+                    color: $white;
+                }
+            }
+        }
         .icons {
             @include flex(space-between,center,row);
+            margin-bottom: 10px;
             a {
                 margin-left: 20px;
                 font-size: 2.5rem;

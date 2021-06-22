@@ -74,6 +74,11 @@ header nav .logo a {
   color: white;
 }
 
+header nav .logo a img {
+  width: 200px;
+  height: 50px;
+}
+
 header nav ul {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -316,7 +321,7 @@ search form
   padding: 50px 0;
 }
 
-.searchForm form {
+.searchForm form .firstPartForm {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -335,7 +340,7 @@ search form
 }
 
 @media (max-width: 767px) {
-  .searchForm form {
+  .searchForm form .firstPartForm {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -354,7 +359,7 @@ search form
   }
 }
 
-.searchForm form input {
+.searchForm form .firstPartForm input {
   border: 2px solid #007ec3;
   width: 60%;
   height: 40px;
@@ -362,17 +367,17 @@ search form
 }
 
 @media (max-width: 767px) {
-  .searchForm form input {
+  .searchForm form .firstPartForm input {
     width: 100%;
     margin-top: 10px;
   }
 }
 
-.searchForm form input:hover {
+.searchForm form .firstPartForm input:hover {
   border: 3px solid #007ec3;
 }
 
-.searchForm form button {
+.searchForm form .firstPartForm button {
   border: 2px solid #007ec3;
   height: 40px;
   width: 10%;
@@ -383,19 +388,96 @@ search form
 }
 
 @media (max-width: 767px) {
-  .searchForm form button {
+  .searchForm form .firstPartForm button {
     width: 30%;
     margin-top: 10px;
   }
 }
 
-.searchForm form button:hover {
+.searchForm form .firstPartForm button:hover {
   border: 3px solid #007ec3;
 }
 
-.searchForm form .checkBox {
+.searchForm form .secondPartForm {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+@media (max-width: 767px) {
+  .searchForm form .secondPartForm {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.searchForm form .secondPartForm input {
+  border: 2px solid #007ec3;
+  width: 60%;
+  height: 40px;
+  text-align: center;
+}
+
+@media (max-width: 767px) {
+  .searchForm form .secondPartForm input {
+    width: 100%;
+    margin-top: 10px;
+  }
+}
+
+.searchForm form .secondPartForm input:hover {
+  border: 3px solid #007ec3;
+}
+
+.searchForm form .secondPartForm #city {
+  width: 71%;
+  margin-top: 20px;
+  display: none;
+}
+
+.searchForm form .secondPartForm #unhideExtraSearch {
+  color: red;
+  border: 2px solid red;
+  border-radius: 10px;
+  padding: 3px;
+  display: none;
+  margin-top: 20px;
+}
+
+.searchForm form .secondPartForm #unhideExtraSearch:hover {
+  background-color: red;
+  color: white;
+}
+
+.searchForm form .secondPartForm .checkBox {
   border: 2px solid #007ec3;
   margin-top: 20px;
+  width: 71%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -411,9 +493,16 @@ search form
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  display: none;
 }
 
-.searchForm form .checkBox div {
+@media (max-width: 767px) {
+  .searchForm form .secondPartForm .checkBox {
+    width: 100%;
+  }
+}
+
+.searchForm form .secondPartForm .checkBox div {
   width: 50%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -432,13 +521,13 @@ search form
           flex-direction: row;
 }
 
-.searchForm form .checkBox div input {
+.searchForm form .secondPartForm .checkBox div input {
   text-align: center;
   margin: 10px;
   width: 20%;
 }
 
-.searchForm form .checkBox div label {
+.searchForm form .secondPartForm .checkBox div label {
   text-align: left;
   width: 50%;
 }
@@ -448,6 +537,12 @@ insert ad form
 ************************/
 .insertAdForm {
   padding: 50px 0;
+}
+
+@media (max-width: 767px) {
+  .insertAdForm {
+    width: 100%;
+  }
 }
 
 .insertAdForm h2 {
@@ -507,6 +602,8 @@ insert ad form
 .insertAdForm form .checkBox {
   border: 2px solid #007ec3;
   margin-top: 20px;
+  margin-bottom: 20px;
+  width: 50%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -522,6 +619,12 @@ insert ad form
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+}
+
+@media (max-width: 767px) {
+  .insertAdForm form .checkBox {
+    padding: 0 20px;
+  }
 }
 
 .insertAdForm form .checkBox div {
@@ -598,24 +701,10 @@ ad display
   padding: 50px 0;
 }
 
-.adDisplay hgroup {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  width: 100%;
-  margin-top: 10px;
+@media (max-width: 767px) {
+  .adDisplay {
+    width: 90%;
+  }
 }
 
 .adDisplay .ad {
@@ -635,8 +724,12 @@ ad display
       -ms-flex-direction: row;
           flex-direction: row;
   width: 100%;
-  margin-bottom: 20px;
-  padding: 50px 0;
+  margin-bottom: 50px;
+  padding: 30px 30px;
+  border: 2px solid #007ec3;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 0px 10px #007ec3;
+          box-shadow: 0px 0px 10px #007ec3;
 }
 
 @media (max-width: 767px) {
@@ -656,7 +749,53 @@ ad display
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+  }
+}
+
+.adDisplay .ad hgroup {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 767px) {
+  .adDisplay .ad hgroup {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     padding: 10px 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .adDisplay .ad hgroup p {
+    margin-bottom: 10px;
   }
 }
 
@@ -717,7 +856,6 @@ ad display
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin-bottom: 30px;
 }
 
 .adDisplay .ad div .first h2 {
@@ -727,8 +865,68 @@ ad display
   font-size: 1.8rem;
 }
 
+@media (max-width: 767px) {
+  .adDisplay .ad div .first h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+}
+
+.adDisplay .ad div .first p {
+  font-size: 1.2rem;
+}
+
+@media (max-width: 767px) {
+  .adDisplay .ad div .first {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.adDisplay .ad div .tags {
+  width: 100%;
+  margin-top: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.adDisplay .ad div .tags p {
+  color: #007ec3;
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-left: 10px;
+}
+
 .adDisplay .ad div .second {
   width: 100%;
+  margin-top: 30px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -759,10 +957,10 @@ ad display
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    -webkit-box-orient: vertical;
+    -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+        -ms-flex-direction: row;
+            flex-direction: row;
   }
 }
 
@@ -777,6 +975,7 @@ ad display
 @media (max-width: 767px) {
   .adDisplay .ad div .second #price {
     margin-bottom: 10px;
+    font-size: 12px;
   }
 }
 
@@ -791,6 +990,7 @@ ad display
 @media (max-width: 767px) {
   .adDisplay .ad div .second #seen {
     margin-bottom: 10px;
+    font-size: 12px;
   }
 }
 
@@ -805,12 +1005,13 @@ ad display
 @media (max-width: 767px) {
   .adDisplay .ad div .second #city {
     margin-bottom: 10px;
+    font-size: 12px;
   }
 }
 
-.adDisplay hr {
-  color: #007ec3;
-  width: 100%;
+.adDisplay .ad:hover {
+  -webkit-transform: scale(1.1, 1.1);
+          transform: scale(1.1, 1.1);
 }
 
 /************************
@@ -853,7 +1054,34 @@ footer article {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+footer article .footerUl {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   margin-bottom: 10px;
+}
+
+footer article .footerUl li {
+  padding: 0 30px;
+  margin-bottom: 5px;
+}
+
+footer article .footerUl li a {
+  color: white;
 }
 
 footer article .icons {
@@ -872,6 +1100,7 @@ footer article .icons {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  margin-bottom: 10px;
 }
 
 footer article .icons a {

@@ -52,9 +52,10 @@
         }
 
         public function selectAds(){
-            $sql = "select a.*,c.name as currency
+            $sql = "select a.*,c.name as currency, s.name as korisnik, DATE_FORMAT(a.date_created, '%d.%m.%Y') as postavljeno
                     from ads a
                     inner join sf_currency c on c.currency_id = a.currency_id
+                    inner join users s on s.user_id = a.user_id
                     where a.ad_status_id = ?
                     order by a.date_created desc ";
             $query = $this->conn->prepare($sql);
@@ -70,6 +71,19 @@
                     from ad_image ai
                     where ai.ad_id = ?
                     limit 1";
+            $query = $this->conn->prepare($sql);
+            $query->execute([$ad_id]);
+            
+            $result = $query->fetch(PDO::FETCH_OBJ);
+
+            return $result;
+        }
+
+        public function selectAdTags($ad_id){
+            $sql = "select * 
+                    from ad_tag at
+                    inner join sf_tag t on t.tag_id = at.tag_id
+                    where at.ad_id = ?";
             $query = $this->conn->prepare($sql);
             $query->execute([$ad_id]);
             

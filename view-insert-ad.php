@@ -40,8 +40,8 @@
             <?php endforeach; ?>
         </select>
 
-        <h3>Slika 1:</h3>
-        <input class="uploadImage" type="file" name="file1" required>
+        <h3>Slika 1 (opciono):</h3>
+        <input class="uploadImage" type="file" name="file1">
         <h3>Slika 2 (opciono):</h3>
         <input class="uploadImage" type="file" name="file2">
         <h3>Slika 3 (opciono):</h3>
