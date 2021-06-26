@@ -51,13 +51,22 @@
             return $result;
         }
 
-        public function selectAds(){
+        public function selectAds($search,$city,$tag1,$tag2,$tag3,$tag4,$tag5,$tag6,$tag7,$tag8,$tag9){
             $sql = "select a.*,c.name as currency, s.name as korisnik, DATE_FORMAT(a.date_created, '%d.%m.%Y') as postavljeno
                     from ads a
                     inner join sf_currency c on c.currency_id = a.currency_id
                     inner join users s on s.user_id = a.user_id
+                    inner join sf_country con on con.country_id = a.country_id
                     where a.ad_status_id = ?
-                    order by a.date_created desc ";
+                        and (a.title like '%{$search}%' or a.text like '%{$search}%' or con.name like '%{$search}%' or '{$search}' = '')
+                            and (a.city like '%{$city}%' or '{$city}' = '')
+                                and (a.ad_id in (
+                                        select at.ad_id
+                                        from ad_tag at
+                                        where at.ad_id = a.ad_id
+                                            and at.tag_id in ( '{$tag1}','{$tag2}','{$tag3}','{$tag4}','{$tag5}','{$tag6}','{$tag7}','{$tag8}','{$tag9}' )
+                                        ) or ('{$tag1}' = '' and '{$tag2}' = '' and '{$tag3}' = '' and '{$tag4}' = '' and '{$tag5}' = '' and '{$tag6}' = '' and '{$tag7}' = '' and '{$tag8}' = '' and '{$tag9}' = '')  )
+                    order by a.ad_type_id desc, a.date_created desc ";
             $query = $this->conn->prepare($sql);
             $query->execute([1]);
             
@@ -92,10 +101,10 @@
             return $result;
         }
 
-        public function insertAd($title,$text,$countryId,$city,$categoryId,$price,$currencyId,$userId){
-            $sql = "insert into ads values(null,?,?,?,?,?,?,?,?,?,CURRENT_TIMESTAMP(),?,?) ";
+        public function insertAd($title,$text,$countryId,$city,$categoryId,$price,$currencyId,$userId,$telephone){
+            $sql = "insert into ads values(null,?,?,?,?,?,?,?,?,?,CURRENT_TIMESTAMP(),?,?,?) ";
             $query = $this->conn->prepare($sql);
-            $check = $query->execute([$title,$text,$countryId,$city,$categoryId,1,$price,$currencyId,0,$userId,1]);
+            $check = $query->execute([$title,$text,$countryId,$city,$categoryId,1,$price,$currencyId,0,$userId,1,$telephone]);
             $last_id = $this->conn->lastInsertId();
 
             if($check){

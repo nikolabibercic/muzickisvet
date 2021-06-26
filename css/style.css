@@ -465,8 +465,15 @@ search form
   display: none;
 }
 
+@media (max-width: 767px) {
+  .searchForm form .secondPartForm #city {
+    width: 100%;
+  }
+}
+
 .searchForm form .secondPartForm #unhideExtraSearch {
-  color: red;
+  background-color: red;
+  color: white;
   border: 2px solid red;
   border-radius: 10px;
   padding: 3px;
@@ -475,8 +482,9 @@ search form
 }
 
 .searchForm form .secondPartForm #unhideExtraSearch:hover {
-  background-color: red;
-  color: white;
+  background-color: white;
+  color: red;
+  cursor: pointer;
 }
 
 .searchForm form .secondPartForm .checkBox {
@@ -1023,6 +1031,7 @@ ad display
 footer
 ************************/
 footer {
+  padding: 50px 0;
   background-color: #003368;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1039,6 +1048,12 @@ footer {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+@media (max-width: 767px) {
+  footer .container2 {
+    width: 80%;
+  }
 }
 
 footer .footerSection1 {
@@ -1116,6 +1131,6 @@ footer .footerSection2 ul li a {
 footer .footerSection2 p {
   color: white;
   font-size: 1.1rem;
-  margin-top: 10px;
+  margin-top: 30px;
 }
 /*# sourceMappingURL=style.css.map */

@@ -39,6 +39,8 @@
                 <option value=<?php echo $x->currency_id; ?> class="form-control"><?php echo $x->name; ?></option>
             <?php endforeach; ?>
         </select>
+        <h3>Telefon:</h3>
+        <input type="text" name="telephone" placeholder="Telefon">
 
         <h3>Slika 1 (opciono):</h3>
         <input class="uploadImage" type="file" name="file1">

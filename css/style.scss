@@ -293,17 +293,22 @@ search form
                 width: 71%;
                 margin-top: 20px;
                 display: none;
+                @media(max-width: 767px) {
+                    width: 100%;
+                }
             }
             #unhideExtraSearch {
-                color: red;
+                background-color: red;
+                color: $white;
                 border: 2px solid red;
                 border-radius: 10px;
                 padding: 3px;
                 display: none;
                 margin-top: 20px;
                 &:hover {
-                    background-color: red;
-                    color: $white;
+                    background-color: white;
+                    color: red;
+                    cursor: pointer;
                 }
             }
             .checkBox {
@@ -539,6 +544,12 @@ ad display
 footer
 ************************/
 footer {
+    .container2{
+        @media(max-width: 767px) {
+            width: 80%;
+        }
+    }
+    padding: $padding;
     background-color: $secondaryColor;
     @include flex(space-between,center,column);
     .footerSection1{
@@ -547,6 +558,7 @@ footer {
             @include flex(space-around,center,row);
             li{
                 font-size: 2.6rem;
+
                 a{
                     color: $white;
                 }
@@ -569,7 +581,7 @@ footer {
         p{
             color:$white;
             font-size: 1.1rem;
-            margin-top: 10px;
+            margin-top: 30px;
         }
     }
 }

@@ -12,7 +12,7 @@
                 <li><a href="view-contact.php">Uslovi oglašavanja</a></li>
                 <li><a href="view-contact.php">Kontakt</a></li>
             </ul>
-            <p>MuzickiSvet.rs &copy; All rights reserved.</p>
+            <p>SveMuzicara.rs &copy; All rights reserved.</p>
         </section>
     </footer>
 

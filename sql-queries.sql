@@ -6,7 +6,8 @@ CREATE TABLE users(
     country varchar(100) character set utf8 null,
     city varchar(100) character set utf8 null,
     profile_image varchar(100) character set utf8 null,
-	date_created datetime not null
+	date_created datetime not null,
+	telephone varchar(100) character set utf8 null
 );
 
 CREATE TABLE sf_role(
@@ -66,6 +67,7 @@ CREATE TABLE ads(
 	date_created datetime not null,
 	user_id int not null,
 	ad_status_id int not null,
+	telephone varchar(100) character set utf8 null,
 	FOREIGN KEY (country_id) REFERENCES sf_country(country_id),
 	FOREIGN KEY (ad_category_id) REFERENCES sf_ad_category(ad_category_id),
 	FOREIGN KEY (ad_type_id) REFERENCES sf_ad_type(ad_type_id),
