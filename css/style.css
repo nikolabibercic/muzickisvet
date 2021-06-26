@@ -37,6 +37,11 @@ a {
   margin: auto;
 }
 
+.container2 {
+  width: 30%;
+  margin: auto;
+}
+
 /************************
 header
 ************************/
@@ -1018,8 +1023,6 @@ ad display
 footer
 ************************/
 footer {
-  padding: 50px 0;
-  margin-top: 50px;
   background-color: #003368;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1038,53 +1041,55 @@ footer {
           flex-direction: column;
 }
 
-footer article {
+footer .footerSection1 {
+  margin-top: 20px;
+}
+
+footer .footerSection1 ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-orient: vertical;
+  -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
 
-footer article .footerUl {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  margin-bottom: 10px;
+footer .footerSection1 ul li {
+  font-size: 2.6rem;
 }
 
-footer article .footerUl li {
-  padding: 0 30px;
-  margin-bottom: 5px;
-}
-
-footer article .footerUl li a {
+footer .footerSection1 ul li a {
   color: white;
 }
 
-footer article .icons {
+footer .footerSection2 {
+  margin-top: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+footer .footerSection2 ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1100,17 +1105,17 @@ footer article .icons {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  margin-bottom: 10px;
 }
 
-footer article .icons a {
-  margin-left: 20px;
-  font-size: 2.5rem;
+footer .footerSection2 ul li a {
   color: white;
+  font-size: 1.1rem;
+  padding: 0 20px;
 }
 
-footer article p {
-  font-size: 0.9rem;
+footer .footerSection2 p {
   color: white;
+  font-size: 1.1rem;
+  margin-top: 10px;
 }
 /*# sourceMappingURL=style.css.map */

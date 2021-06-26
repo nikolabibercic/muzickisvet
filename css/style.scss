@@ -67,6 +67,10 @@ a {
     width: 60%;
     margin: auto;
 }
+.container2 {
+    width: 30%;
+    margin: auto;
+}
 /************************
 header
 ************************/
@@ -535,35 +539,37 @@ ad display
 footer
 ************************/
 footer {
-    padding: $padding;
-    margin-top: 50px;
     background-color: $secondaryColor;
-    @include flex(space-between,center,column);   
-    article {
-        @include flex(space-between,center,column);
-        .footerUl {
-            @include flex(space-between,center,column);  
-            margin-bottom: 10px;
-            li {
-                padding: 0 30px;
-                margin-bottom: 5px;
-                a {
+    @include flex(space-between,center,column);
+    .footerSection1{
+        margin-top: 20px;
+        ul {
+            @include flex(space-around,center,row);
+            li{
+                font-size: 2.6rem;
+                a{
                     color: $white;
                 }
             }
         }
-        .icons {
+    }
+    .footerSection2{
+        margin-top: 10px;
+        @include flex(space-between,center,column);
+        ul{
             @include flex(space-between,center,row);
-            margin-bottom: 10px;
-            a {
-                margin-left: 20px;
-                font-size: 2.5rem;
-                color: $white;
+            li{
+                a{
+                    color:$white;
+                    font-size: 1.1rem;
+                    padding: 0 20px;
+                }
             }
         }
-        p {
-            font-size: 0.9rem;
-            color: $white;
+        p{
+            color:$white;
+            font-size: 1.1rem;
+            margin-top: 10px;
         }
     }
 }
