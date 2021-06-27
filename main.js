@@ -23,6 +23,9 @@ search.onclick = function(){
 
     var unhideExtraSearch = document.getElementById('unhideExtraSearch');
     unhideExtraSearch.style.display = "flex";
+
+    var categoryId = document.getElementById('categoryId');
+    categoryId.style.display = "flex";
 }
 
 //Na klik dugmeta "ukloni dodatnu pretragu" uklanjaju se dodatne opcije za pretragu
@@ -33,6 +36,9 @@ unhideExtraSearch.onclick = function(){
 
     var city = document.getElementById('city');
     city.style.display = "none";
+
+    var categoryId = document.getElementById('categoryId');
+    categoryId.style.display = "none";
 
     unhideExtraSearch.style.display = "none";
 }

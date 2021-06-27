@@ -14,7 +14,16 @@
                     </div>
                 <?php endforeach; ?>
             </section>
+
+            <select name="categoryId" id="categoryId">
+                <option value="" class="form-control">/</option>
+                <?php  $result = $ad->selectAdCategory(); foreach($result as $x):  ?>
+                    <option value=<?php echo $x->ad_category_id; ?> class="form-control"><?php echo $x->name; ?></option>
+                <?php endforeach; ?>
+            </select>
+
             <input type="search" id="city" name="city" placeholder="Mesto/grad">
+
             <p id="unhideExtraSearch">Ukloni dodatnu pretragu</p>
         </div>
     </form>

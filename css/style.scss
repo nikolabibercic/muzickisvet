@@ -289,6 +289,17 @@ search form
                     border: 3px solid $primaryColor;
                 }
             }
+            select {
+                border: 2px solid $primaryColor;
+                width: 71%;
+                height: 40px;
+                text-align: center;
+                display: none;
+                margin-top: 20px;
+                @media(max-width: 767px) {
+                    width: 100%;
+                }
+            }
             #city {
                 width: 71%;
                 margin-top: 20px;
