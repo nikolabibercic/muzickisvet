@@ -8,9 +8,9 @@
 
         //Parametri za konekciju na Unlimited hosting
         //public $host = 'localhost';
-        //public $dbname = '';
-        //public $username = '';
-        //public $password = '';
+        //public $dbname = 'eshopc_svetmuzicara';
+        //public $username = 'eshopc_svetmuzicara';
+        //public $password = 'svetmuzicara#21';
 
         public function connect(){
             try{

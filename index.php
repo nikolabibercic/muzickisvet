@@ -9,6 +9,6 @@
     <div class="logInRegisterUnsuccess">Logovanje nije uspelo!</div>
 <?php endif; ?>
 
-<?php require 'partials/search-form.php'; ?>
+
 
 <?php require 'partials/footer.php'; ?>

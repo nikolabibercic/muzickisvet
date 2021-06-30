@@ -2,7 +2,7 @@
 
 <?php require 'partials/header.php'; ?>
 
-<?php require 'partials/search-form.php'; ?>
+<?php require 'partials/search-form-ads.php'; ?>
 
 <?php 
     if(isset($_GET['search'])) {$search = $_GET['search'];} else {$search = '';}
@@ -39,7 +39,7 @@
                 <?php endif; ?>
             <div>
                 <div class="first">
-                    <h2><a href="view-music-add.php?adId=<?php echo $x->ad_id; ?>"><?php echo $x->title; ?></a></h2>
+                    <h2><a href="view-music-ad.php?adId=<?php echo $x->ad_id; ?>"><?php echo $x->title; ?></a></h2>
                     <p><?php echo $x->text; ?></p>
                 </div>
                 <!--Ako oglas ima tagove/atribute prikazuje ih--> 

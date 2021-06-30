@@ -25,6 +25,12 @@
         </select>
         <h3>Grad:</h3>
         <input type="text" name="city" placeholder="" required>
+        <h3>Muzičari/Mali oglasi:</h3>
+        <select name="superCategoryId" id="">
+            <?php  $result = $ad->selectAdSuperCategory(); foreach($result as $x):  ?>
+                <option value=<?php echo $x->super_category_id; ?> class="form-control"><?php echo $x->name; ?></option>
+            <?php endforeach; ?>
+        </select>
         <h3>Kategorija:</h3>
         <select name="categoryId" id="">
             <?php  $result = $ad->selectAdCategory(); foreach($result as $x):  ?>

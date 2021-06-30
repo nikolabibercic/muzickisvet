@@ -14,12 +14,13 @@
             <div class="logo">
                 <a href="index.php" id="logo">
                     <!--<img src="site-images/logo.jpeg" alt="" height="80px" width="300px">-->
+                    Logo sajta
                 </a>
             </div>
             <ul id="navBarUl">
                 <li class="insertAd"><a href="view-insert-ad.php">Postavite oglas</a></li>
-                <li><a href="">Muzičari</a></li>
-                <li><a href="view-music-adds.php">Mali oglasi</a></li>
+                <li><a href="view-music-ads-musicians.php">Muzičari</a></li>
+                <li><a href="view-music-ads.php">Mali oglasi</a></li>
                 <?php if(isset($_SESSION['user'])): ?>
                     <li><a href="view-user.php"><?php echo $_SESSION['user']->name; ?></a></li>
                 <?php endif; ?>
