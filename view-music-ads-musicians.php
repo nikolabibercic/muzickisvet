@@ -19,8 +19,6 @@
     if(isset($_GET['categoryId'])) {$categoryId = $_GET['categoryId'];} else {$categoryId = '';}
 ?>     
 
-
-
 <section class="adDisplay container">
     <?php $result = $ad->selectAdsMusicians($search,$city,$tag1,$tag2,$tag3,$tag4,$tag5,$tag6,$tag7,$tag8,$tag9,$categoryId); foreach($result as $x):  ?>  
         <article class="ad">
@@ -51,7 +49,7 @@
                 <div class="second">
                     <p id="seen">Viđeno: <?php echo $x->seen; ?></p>
                     <p id="city">Mesto/Grad: <?php echo $x->city; ?></p>
-                    <p id="price">Cena: <?php echo $x->price.' '.$x->currency; ?></p>
+                    <!--<p id="price">Cena: <?php //echo $x->price.' '.$x->currency; ?></p>-->
                 </div>
             </div>
         </article>

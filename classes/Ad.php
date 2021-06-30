@@ -136,6 +136,7 @@
             $sql = "select * 
                     from ad_image ai
                     where ai.ad_id = ?
+                    order by ai.ad_image_id desc
                     limit 1";
             $query = $this->conn->prepare($sql);
             $query->execute([$ad_id]);

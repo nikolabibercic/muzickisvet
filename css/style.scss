@@ -15,6 +15,7 @@ $fontSize: 14px;
 $transition: .5s ease;
 $secondaryColor2:#E0E0E0;
 $grey:#f2f2f2;
+$gold:#FFD700;
 /************************
 mixins
 ************************/
@@ -164,6 +165,7 @@ log in form
 .logInRegisterForm {
     padding: $padding;
     height: 100%;
+    margin-bottom: 50px;
     @media(max-width: 767px) {
         padding: 10px 0;
         width: 100%;
@@ -243,7 +245,7 @@ search form
             }
             input {
                 border: 2px solid $primaryColor;
-                width: 60%;
+                width: 71%;
                 height: 40px;
                 text-align: center;
                 @media(max-width: 767px) {
@@ -254,22 +256,7 @@ search form
                     border: 3px solid $primaryColor;
                 }
             }
-            button {
-                border: 2px solid $primaryColor;
-                height: 40px;
-                width: 10%;
-                margin-left: 5px;
-                background-color: $grey;
-                font-weight: 700;
-                color: $primaryColor;
-                @media(max-width: 767px) {
-                    width: 30%;
-                    margin-top: 10px;
-                }
-                &:hover {
-                    border: 3px solid $primaryColor;
-                }
-            }
+
         }
         .secondPartForm {
             @include flex(center,center,column);
@@ -343,6 +330,23 @@ search form
                         text-align: left;
                         width: 50%;
                     }
+                }
+            }
+            button {
+                border: 2px solid $secondaryColor;
+                height: 40px;
+                width: 71%;
+                background-color: $primaryColor;
+                font-weight: 700;
+                color: $white;
+                margin-top: 20px;
+                @media(max-width: 767px) {
+                    width: 100%;
+                    margin-top: 10px;
+                }
+                &:hover {
+                    border: 3px solid $primaryColor;
+                    background-color: $secondaryColor;
                 }
             }
         }
@@ -597,25 +601,48 @@ single ad display
             border: 10px solid white;
             box-shadow: 0px 0px 5px 2px #ccc;
             @include flex(space-between,center,row);
+            @media(max-width: 767px) {
+                width: 100%;
+                height: 400px;
+                @include flex(space-between,center,row);
+            }
             #box {
+                @include flex(space-between,center,column);
                 img {
-
                     height: 400px;
                     font-weight: 700;
                     font-size: 1.3rem;
                     @media(max-width: 767px) {
-                        max-width: 100%;
+                        width: 100%;
+                        height: 250px;
                         margin-bottom: 10px;
                     }
                 }
+                @media(max-width: 767px) {
+                    order: 1
+                }
             }
-            button {
+            .prew {
                 padding: 10px;
                 border: none;
                 background-color: $primaryColor;
                 font-size: 30px;
                 color: white;
                 cursor: pointer;
+                @media(max-width: 767px) {
+                    order: 2
+                }
+            }
+            .next {
+                padding: 10px;
+                border: none;
+                background-color: $primaryColor;
+                font-size: 30px;
+                color: white;
+                cursor: pointer;
+                @media(max-width: 767px) {
+                    order: 3
+                }
             }
         }
         div {
@@ -723,9 +750,14 @@ footer {
             @include flex(space-around,center,row);
             li{
                 font-size: 2.6rem;
-
                 a{
                     color: $white;
+                    i {
+                        color:$white;
+                        &:hover{
+                            color: $gold;
+                        }
+                    }
                 }
             }
         }

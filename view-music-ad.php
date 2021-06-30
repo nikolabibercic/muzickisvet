@@ -29,15 +29,24 @@
             </hgroup>
             <?php  $result = $ad->selectAdFirstImage($x->ad_id); ?>
                 <div id="slider">
-                    <button class="prew" id="prew" onclick="prewImage()"><</button>
-                    <div id="box">
-                        <!--Ako oglas ima sliku prikazuje sliku-->
- 
-                            <img src=<?php echo 'uploads/harmonika_60d8e351a91121.43991719.jpg' ?> alt="" >
 
+                        <!--Ako oglas nema nijednu sliku prikazuje sliku no image-->
+                        <?php if(!isset($result->image_path)): ?>
+                            <button class="prew" id="prew" onclick=""><</button>
+                            <div id="box">
+                                <img src=<?php echo 'site-images/noImage.jpg' ?> alt="" >
+                            </div>
+                            <button class="next" id="next" onclick="">></button>
+                        <?php else: ?>
 
-                    </div>
-                    <button class="next" id="next" onclick="nextImage()">></button>
+                            <!--Ako oglas ima makar jednu sliku prikazuje prikazuje slike u slideru-->
+                            <button class="prew" id="prew" onclick="prewImage()"><</button>
+                            <div id="box">
+                                <img src=<?php echo 'uploads/'.$result->image_path; ?> alt="" >
+                            </div>
+                            <button class="next" id="next" onclick="nextImage()">></button>
+                        <?php endif; ?>
+
                 </div>
             <div>
                 <div class="first">

@@ -211,6 +211,7 @@ log in form
 .logInRegisterForm {
   padding: 50px 0;
   height: 100%;
+  margin-bottom: 50px;
 }
 
 @media (max-width: 767px) {
@@ -366,7 +367,7 @@ search form
 
 .searchForm form .firstPartForm input {
   border: 2px solid #007ec3;
-  width: 60%;
+  width: 71%;
   height: 40px;
   text-align: center;
 }
@@ -379,27 +380,6 @@ search form
 }
 
 .searchForm form .firstPartForm input:hover {
-  border: 3px solid #007ec3;
-}
-
-.searchForm form .firstPartForm button {
-  border: 2px solid #007ec3;
-  height: 40px;
-  width: 10%;
-  margin-left: 5px;
-  background-color: #f2f2f2;
-  font-weight: 700;
-  color: #007ec3;
-}
-
-@media (max-width: 767px) {
-  .searchForm form .firstPartForm button {
-    width: 30%;
-    margin-top: 10px;
-  }
-}
-
-.searchForm form .firstPartForm button:hover {
   border: 3px solid #007ec3;
 }
 
@@ -558,6 +538,28 @@ search form
 .searchForm form .secondPartForm .checkBox div label {
   text-align: left;
   width: 50%;
+}
+
+.searchForm form .secondPartForm button {
+  border: 2px solid #003368;
+  height: 40px;
+  width: 71%;
+  background-color: #007ec3;
+  font-weight: 700;
+  color: white;
+  margin-top: 20px;
+}
+
+@media (max-width: 767px) {
+  .searchForm form .secondPartForm button {
+    width: 100%;
+    margin-top: 10px;
+  }
+}
+
+.searchForm form .secondPartForm button:hover {
+  border: 3px solid #007ec3;
+  background-color: #003368;
 }
 
 /************************
@@ -1190,6 +1192,46 @@ single ad display
           flex-direction: row;
 }
 
+@media (max-width: 767px) {
+  .singleAdDisplay .ad #slider {
+    width: 100%;
+    height: 400px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+
+.singleAdDisplay .ad #slider #box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
 .singleAdDisplay .ad #slider #box img {
   height: 400px;
   font-weight: 700;
@@ -1198,18 +1240,52 @@ single ad display
 
 @media (max-width: 767px) {
   .singleAdDisplay .ad #slider #box img {
-    max-width: 100%;
+    width: 100%;
+    height: 250px;
     margin-bottom: 10px;
   }
 }
 
-.singleAdDisplay .ad #slider button {
+@media (max-width: 767px) {
+  .singleAdDisplay .ad #slider #box {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+}
+
+.singleAdDisplay .ad #slider .prew {
   padding: 10px;
   border: none;
   background-color: #007ec3;
   font-size: 30px;
   color: white;
   cursor: pointer;
+}
+
+@media (max-width: 767px) {
+  .singleAdDisplay .ad #slider .prew {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+}
+
+.singleAdDisplay .ad #slider .next {
+  padding: 10px;
+  border: none;
+  background-color: #007ec3;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+}
+
+@media (max-width: 767px) {
+  .singleAdDisplay .ad #slider .next {
+    -webkit-box-ordinal-group: 4;
+        -ms-flex-order: 3;
+            order: 3;
+  }
 }
 
 .singleAdDisplay .ad div {
@@ -1466,6 +1542,14 @@ footer .footerSection1 ul li {
 
 footer .footerSection1 ul li a {
   color: white;
+}
+
+footer .footerSection1 ul li a i {
+  color: white;
+}
+
+footer .footerSection1 ul li a i:hover {
+  color: #FFD700;
 }
 
 footer .footerSection2 {

@@ -3,7 +3,7 @@
     <form action="view-music-ads-musicians.php" method="GET" autocomplete="on">
         <div class="firstPartForm">
             <input type="search" id="search" name="search" placeholder="Pretraga oglasa">
-            <button type="submit">Traži</button>
+            
         </div>
         <div class="secondPartForm">       
             <section class="checkBox" id="checkBox"> 
@@ -23,6 +23,8 @@
             </select>
 
             <input type="search" id="city" name="city" placeholder="Mesto/grad">
+
+            <button type="submit">Traži</button>
 
             <p id="unhideExtraSearch">Ukloni dodatnu pretragu</p>
         </div>
