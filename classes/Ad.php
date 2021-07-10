@@ -2,6 +2,7 @@
     class Ad extends ConnectionBuilder{
 
         public $adInserted = null;
+        public $results_per_page = 3;
 
         public function selectAdCategory(){
             $sql = "select * 
@@ -63,8 +64,8 @@
             return $result;
         }
 
-        public function selectAds($search,$city,$tag1,$tag2,$tag3,$tag4,$tag5,$tag6,$tag7,$tag8,$tag9,$categoryId){
-            $sql = "select a.*,c.name as currency, s.name as korisnik, DATE_FORMAT(a.date_created, '%d.%m.%Y') as postavljeno
+        public function numberOfAds($search,$city,$tag1,$tag2,$tag3,$tag4,$tag5,$tag6,$tag7,$tag8,$tag9,$categoryId){
+            $sql = "select count(*) as number_of_ads
                     from ads a
                     inner join sf_currency c on c.currency_id = a.currency_id
                     inner join users s on s.user_id = a.user_id
@@ -89,8 +90,8 @@
             return $result;
         }
 
-        public function selectAdsMusicians($search,$city,$tag1,$tag2,$tag3,$tag4,$tag5,$tag6,$tag7,$tag8,$tag9,$categoryId){
-            $sql = "select a.*,c.name as currency, s.name as korisnik, DATE_FORMAT(a.date_created, '%d.%m.%Y') as postavljeno
+        public function numberOfAdsMusicians($search,$city,$tag1,$tag2,$tag3,$tag4,$tag5,$tag6,$tag7,$tag8,$tag9,$categoryId){
+            $sql = "select count(*) as number_of_ads
                     from ads a
                     inner join sf_currency c on c.currency_id = a.currency_id
                     inner join users s on s.user_id = a.user_id
@@ -107,6 +108,60 @@
                                             and at.tag_id in ( '{$tag1}','{$tag2}','{$tag3}','{$tag4}','{$tag5}','{$tag6}','{$tag7}','{$tag8}','{$tag9}' )
                                         ) or ('{$tag1}' = '' and '{$tag2}' = '' and '{$tag3}' = '' and '{$tag4}' = '' and '{$tag5}' = '' and '{$tag6}' = '' and '{$tag7}' = '' and '{$tag8}' = '' and '{$tag9}' = '')  )
                     order by a.ad_type_id desc, a.date_created desc ";
+            $query = $this->conn->prepare($sql);
+            $query->execute([1]);
+            
+            $result = $query->fetchAll(PDO::FETCH_OBJ);
+
+            return $result;
+        }
+
+        public function selectAds($search,$city,$tag1,$tag2,$tag3,$tag4,$tag5,$tag6,$tag7,$tag8,$tag9,$categoryId,$this_page_first_result,$results_per_page){
+            $sql = "select a.*,c.name as currency, s.name as korisnik, DATE_FORMAT(a.date_created, '%d.%m.%Y') as postavljeno
+                    from ads a
+                    inner join sf_currency c on c.currency_id = a.currency_id
+                    inner join users s on s.user_id = a.user_id
+                    inner join sf_country con on con.country_id = a.country_id
+                    where a.ad_status_id = ?
+                        and a.super_category_id = 2
+                        and (a.title like '%{$search}%' or a.text like '%{$search}%' or con.name like '%{$search}%' or '{$search}' = '')
+                            and (a.city like '%{$city}%' or '{$city}' = '')
+                            and (a.ad_category_id = '{$categoryId}' or '{$categoryId}' = '')
+                                and (a.ad_id in (
+                                        select at.ad_id
+                                        from ad_tag at
+                                        where at.ad_id = a.ad_id
+                                            and at.tag_id in ( '{$tag1}','{$tag2}','{$tag3}','{$tag4}','{$tag5}','{$tag6}','{$tag7}','{$tag8}','{$tag9}' )
+                                        ) or ('{$tag1}' = '' and '{$tag2}' = '' and '{$tag3}' = '' and '{$tag4}' = '' and '{$tag5}' = '' and '{$tag6}' = '' and '{$tag7}' = '' and '{$tag8}' = '' and '{$tag9}' = '')  )
+                    order by a.ad_type_id desc, a.date_created desc 
+                    limit {$this_page_first_result},{$results_per_page}";
+            $query = $this->conn->prepare($sql);
+            $query->execute([1]);
+            
+            $result = $query->fetchAll(PDO::FETCH_OBJ);
+
+            return $result;
+        }
+
+        public function selectAdsMusicians($search,$city,$tag1,$tag2,$tag3,$tag4,$tag5,$tag6,$tag7,$tag8,$tag9,$categoryId,$this_page_first_result,$results_per_page){
+            $sql = "select a.*,c.name as currency, s.name as korisnik, DATE_FORMAT(a.date_created, '%d.%m.%Y') as postavljeno
+                    from ads a
+                    inner join sf_currency c on c.currency_id = a.currency_id
+                    inner join users s on s.user_id = a.user_id
+                    inner join sf_country con on con.country_id = a.country_id
+                    where a.ad_status_id = ?
+                        and a.super_category_id = 1
+                        and (a.title like '%{$search}%' or a.text like '%{$search}%' or con.name like '%{$search}%' or '{$search}' = '')
+                            and (a.city like '%{$city}%' or '{$city}' = '')
+                            and (a.ad_category_id = '{$categoryId}' or '{$categoryId}' = '')
+                                and (a.ad_id in (
+                                        select at.ad_id
+                                        from ad_tag at
+                                        where at.ad_id = a.ad_id
+                                            and at.tag_id in ( '{$tag1}','{$tag2}','{$tag3}','{$tag4}','{$tag5}','{$tag6}','{$tag7}','{$tag8}','{$tag9}' )
+                                        ) or ('{$tag1}' = '' and '{$tag2}' = '' and '{$tag3}' = '' and '{$tag4}' = '' and '{$tag5}' = '' and '{$tag6}' = '' and '{$tag7}' = '' and '{$tag8}' = '' and '{$tag9}' = '')  )
+                    order by a.ad_type_id desc, a.date_created desc 
+                    limit {$this_page_first_result},{$results_per_page}";
             $query = $this->conn->prepare($sql);
             $query->execute([1]);
             

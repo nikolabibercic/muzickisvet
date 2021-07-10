@@ -17,10 +17,22 @@
     if(isset($_GET['8'])) {$tag8 = $_GET['8'];} else {$tag8 = '';}
     if(isset($_GET['9'])) {$tag9 = $_GET['9'];} else {$tag9 = '';}
     if(isset($_GET['categoryId'])) {$categoryId = $_GET['categoryId'];} else {$categoryId = '';}
+
+    $number_of_ads = $ad->numberOfAdsMusicians($search,$city,$tag1,$tag2,$tag3,$tag4,$tag5,$tag6,$tag7,$tag8,$tag9,$categoryId);
+    $results_per_page = $ad->results_per_page;
+    $number_of_pages = ceil($number_of_ads[0]->number_of_ads / $results_per_page);
+
+    if(!isset($_GET['page'])){
+        $page = 1;
+    }else{
+        $page = $_GET['page'];
+    }
+
+    $this_page_first_result = ($page - 1) * $results_per_page;
 ?>     
 
 <section class="adDisplay container">
-    <?php $result = $ad->selectAdsMusicians($search,$city,$tag1,$tag2,$tag3,$tag4,$tag5,$tag6,$tag7,$tag8,$tag9,$categoryId); foreach($result as $x):  ?>  
+    <?php $result = $ad->selectAdsMusicians($search,$city,$tag1,$tag2,$tag3,$tag4,$tag5,$tag6,$tag7,$tag8,$tag9,$categoryId,$this_page_first_result,$results_per_page); foreach($result as $x):  ?>  
         <article class="ad">
             <hgroup>
                 <p>ID oglasa: <?php echo $x->ad_id; ?></p>
@@ -55,6 +67,17 @@
         </article>
 
     <?php endforeach; ?>
+
+    <div class="pagination">
+        <ul>
+            <?php 
+                for($page=1;$page<=$number_of_pages;$page++){       
+                    echo '<li class=""> <a class="" href="view-music-ads-musicians.php?page='.$page.'&search='.$search.'&city='.$city.'&tag1='.$tag1.'&tag2='.$tag2.'&tag3='.$tag3.'&tag4='.$tag4.'&tag5='.$tag5.'&tag6='.$tag6.'&tag7='.$tag7.'&tag8='.$tag8.'&tag9='.$tag9.'&categoryId='.$categoryId.' ">'.$page.'</a></li>';
+                }
+            ?>
+        </ul>
+    </div>
+
 </section>
 
 <?php require 'partials/footer.php'; ?>
