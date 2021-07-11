@@ -2,7 +2,7 @@
     class Connection {
         //Parametri za konekciju na localhost
         public $host = 'localhost';
-        public $dbname = 'muzicki_svet';
+        public $dbname = 'svetmuzicara';
         public $username = 'root';
         public $password = '';
 

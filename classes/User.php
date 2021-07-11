@@ -28,7 +28,7 @@
         }
 
         public function registerUser($name,$email,$password){
-            $sql = "insert into users values(null,?,?,?,'','','',CURRENT_TIMESTAMP(),'')";
+            $sql = "insert into users values(null,?,?,?,1,null,null,CURRENT_TIMESTAMP(),null)";
             $query = $this->conn->prepare($sql);
             $checkInsert = $query->execute([$name,$email,$password]);
 
@@ -53,8 +53,9 @@
         }
 
         public function selectUser($userId){
-            $sql = "select *
+            $sql = "select u.*, c.name as country_name
                     from users u
+                    inner join sf_country c on u.country_id = c.country_id
                     where u.user_id = {$userId}";
 
             $query = $this->conn->prepare($sql);
@@ -64,5 +65,22 @@
 
             return $result;
         }
+
+        public function updateUserImage($filePath,$userId){
+            $sql = "update users 
+            set profile_image = '{$filePath}'
+            where user_id = {$userId};";
+            $query = $this->conn->prepare($sql);
+            $query->execute();
+        }
+
+        public function updateUser($name,$countryId,$city,$telephone,$userId){
+            $sql = "update users 
+            set name = '{$name}', country_id = {$countryId}, city = '{$city}', telephone = '{$telephone}'
+            where user_id = {$userId};";
+            $query = $this->conn->prepare($sql);
+            $query->execute();
+        }
+
     }
 ?>

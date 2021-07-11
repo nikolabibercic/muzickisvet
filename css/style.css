@@ -270,14 +270,14 @@ log in form
 .logInRegisterForm form button {
   padding: 10px 30px;
   border: 3px solid #007ec3;
-  color: #007ec3;
-  background: white;
+  color: white;
+  background: #007ec3;
   font-size: 1.3rem;
   border-radius: 10px;
 }
 
 .logInRegisterForm form button:hover {
-  background: #007ec3;
+  background: #003368;
   color: white;
 }
 
@@ -690,8 +690,8 @@ insert ad form
 .insertAdForm form button {
   padding: 10px 30px;
   border: 3px solid #007ec3;
-  color: #007ec3;
-  background: white;
+  color: white;
+  background: #007ec3;
   font-size: 1.3rem;
   border-radius: 10px;
   border-radius: 0px;
@@ -699,7 +699,7 @@ insert ad form
 }
 
 .insertAdForm form button:hover {
-  background: #007ec3;
+  background: #003368;
   color: white;
 }
 
@@ -1517,6 +1517,134 @@ single ad display
   .singleAdDisplay .ad div .second #city {
     margin-bottom: 10px;
     font-size: 12px;
+  }
+}
+
+/************************
+user form
+************************/
+.userForm {
+  margin-top: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+@media (max-width: 767px) {
+  .userForm {
+    padding: 10px 0;
+    width: 100%;
+  }
+}
+
+.userForm h2 {
+  text-align: center;
+  font-size: 3rem;
+  color: #007ec3;
+  margin-bottom: 20px;
+}
+
+.userForm form {
+  width: 100%;
+  padding: 50px 0;
+  margin-bottom: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.userForm form img {
+  width: 400px;
+  height: 400px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.userForm form .uploadImage {
+  border: none;
+  margin-bottom: 50px;
+}
+
+.userForm form input, .userForm form select {
+  width: 60%;
+  margin-bottom: 20px;
+  padding: 10px 0;
+  padding-left: 10px;
+  font-family: 'Playfair Display', serif;
+  border: 3px solid #007ec3;
+  text-align: center;
+  color: black;
+  font-size: 16px;
+  border-radius: 10px;
+}
+
+@media (max-width: 767px) {
+  .userForm form input, .userForm form select {
+    width: 80%;
+  }
+}
+
+.userForm form select {
+  text-align: center;
+  height: 40px;
+}
+
+.userForm form h3 {
+  text-align: left;
+  font-size: 1rem;
+  color: #007ec3;
+  margin-bottom: 5px;
+}
+
+.userForm form button {
+  padding: 10px 30px;
+  border: 3px solid #007ec3;
+  color: white;
+  background: #007ec3;
+  font-size: 1.3rem;
+  border-radius: 10px;
+  margin-top: 20px;
+  background-color: #007ec3;
+  color: white;
+}
+
+.userForm form button:hover {
+  background: #003368;
+  color: white;
+}
+
+.userForm form button:hover {
+  background-color: #003368;
+  color: white;
+}
+
+@media (max-width: 767px) {
+  .userForm form button {
+    margin-bottom: 20px;
   }
 }
 

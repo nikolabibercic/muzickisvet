@@ -1,13 +1,19 @@
+CREATE TABLE sf_country(
+	country_id int AUTO_INCREMENT PRIMARY KEY,
+	name varchar(50) character set utf8 not null unique
+);
+
 CREATE TABLE users(
 	user_id int AUTO_INCREMENT PRIMARY KEY,
 	name varchar(100) character set utf8 not null,
     email varchar(100) character set utf8 not null unique,
     password varchar(100) character set utf8 not null,
-    country varchar(100) character set utf8 null,
+	country_id int null,
     city varchar(100) character set utf8 null,
     profile_image varchar(100) character set utf8 null,
 	date_created datetime not null,
-	telephone varchar(100) character set utf8 null
+	telephone varchar(100) character set utf8 null,
+	FOREIGN KEY (country_id) REFERENCES sf_country(country_id)
 );
 
 CREATE TABLE sf_role(
@@ -40,11 +46,6 @@ CREATE TABLE sf_tag(
 
 CREATE TABLE sf_currency(
 	currency_id int AUTO_INCREMENT PRIMARY KEY,
-	name varchar(50) character set utf8 not null unique
-);
-
-CREATE TABLE sf_country(
-	country_id int AUTO_INCREMENT PRIMARY KEY,
 	name varchar(50) character set utf8 not null unique
 );
 
@@ -82,6 +83,8 @@ CREATE TABLE ads(
 	FOREIGN KEY (ad_status_id) REFERENCES sf_ad_status(ad_status_id),
 	FOREIGN KEY (super_category_id) REFERENCES sf_super_category(super_category_id)
 );
+
+ALTER TABLE ads AUTO_INCREMENT=1000;
 
 CREATE TABLE ad_tag(
 	ad_tag_id int AUTO_INCREMENT PRIMARY KEY,
@@ -126,6 +129,7 @@ insert into sf_currency values(null,'RSD');
 insert into sf_ad_status values(null,'Active');
 insert into sf_ad_status values(null,'Inactive');
 
+insert into sf_country values(null,'Nepoznato');
 insert into sf_country values(null,'Srbija');
 insert into sf_country values(null,'Hrvatska');
 insert into sf_country values(null,'Bosna i Hercegovina');
@@ -143,5 +147,5 @@ insert into sf_tag values(null,'Electronic');
 -------------------------------------------------------------------------------------------------
 ---OPCIONI INSERTI
 -------------------------------------------------------------------------------------------------
-insert into users values(null,'Nikola Bibercic','nikolabibercic@gmail.com','123','','','',CURRENT_TIMESTAMP(),'');
+insert into users values(null,'Nikola Bibercic','nikolabibercic@gmail.com','123','1','','',CURRENT_TIMESTAMP(),'');
 insert into user_role values(null,1,1);

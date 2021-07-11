@@ -31,6 +31,7 @@
         public function selectAdCountry(){
             $sql = "select * 
                     from sf_country c
+                    where c.name <> 'nepoznato'
                     order by c.country_id ";
             $query = $this->conn->prepare($sql);
             $query->execute();
