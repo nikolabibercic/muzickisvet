@@ -64,6 +64,7 @@
             return $result;
         }
 
+        //funckija koja se koristi za paginaciju
         public function numberOfAds($search,$city,$tag1,$tag2,$tag3,$tag4,$tag5,$tag6,$tag7,$tag8,$tag9,$categoryId){
             $sql = "select count(*) as number_of_ads
                     from ads a
@@ -90,6 +91,7 @@
             return $result;
         }
 
+        //funckija koja se koristi za paginaciju
         public function numberOfAdsMusicians($search,$city,$tag1,$tag2,$tag3,$tag4,$tag5,$tag6,$tag7,$tag8,$tag9,$categoryId){
             $sql = "select count(*) as number_of_ads
                     from ads a

@@ -1076,6 +1076,12 @@ ad display
   font-weight: 700;
 }
 
+.adDisplay .pagination ul a:hover {
+  background-color: white;
+  color: #007ec3;
+  border: 2px solid #007ec3;
+}
+
 /************************
 single ad display
 ************************/

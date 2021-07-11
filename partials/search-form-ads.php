@@ -16,7 +16,7 @@
             </section>
 
             <select name="categoryId" id="categoryId">
-                <option value="" class="form-control">/</option>
+                <option value="" class="form-control">Sve kategorije</option>
                 <?php  $result = $ad->selectAdCategory(); foreach($result as $x):  ?>
                     <option value=<?php echo $x->ad_category_id; ?> class="form-control"><?php echo $x->name; ?></option>
                 <?php endforeach; ?>

@@ -21,8 +21,11 @@
                 <li class="insertAd"><a href="view-insert-ad.php">Postavite oglas</a></li>
                 <li><a href="view-music-ads-musicians.php">Muzičari</a></li>
                 <li><a href="view-music-ads.php">Mali oglasi</a></li>
-                <?php if(isset($_SESSION['user'])): ?>
+                <?php if(isset($_SESSION['user']) and !$user->checkUserAdmin($_SESSION['user']->user_id)): ?>
                     <li><a href="view-user.php"><?php echo $_SESSION['user']->name; ?></a></li>
+                <?php endif; ?>
+                <?php if(isset($_SESSION['user']) and $user->checkUserAdmin($_SESSION['user']->user_id)): ?>
+                    <li><a href="view-admin.php"><?php echo $_SESSION['user']->name; ?></a></li>
                 <?php endif; ?>
                 <?php if(isset($_SESSION['user'])): ?>
                     <li><a href="controller/log-out.php"><i class="fas fa-sign-out-alt"></i> Log out</a></li>

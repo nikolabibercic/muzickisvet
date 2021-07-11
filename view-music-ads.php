@@ -30,8 +30,6 @@
 
     $this_page_first_result = ($page - 1) * $results_per_page;
 
-    //$products = $product->selectAllProducts($search,$categoryId,$brandId,$this_page_first_result,$results_per_page);
-
 ?>     
 
 

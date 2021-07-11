@@ -2,6 +2,7 @@
     class User extends ConnectionBuilder{
 
         public $userLogged = null;
+        public $chechUserAdmin = null;
         
         public $userRegistered = null;
         public $roleAdded = null;
@@ -36,6 +37,32 @@
             }else{
                 $this->userRegistered = false;
             }
+        }
+        public function checkUserAdmin($userId){
+            $sql = "select *
+                    from users u
+                    inner join user_role ur on ur.user_id = u.user_id
+                    where u.user_id = {$userId}";
+
+            $query = $this->conn->prepare($sql);
+            $query->execute();
+            
+            $result = $query->fetchAll(PDO::FETCH_OBJ);
+
+            return $result;
+        }
+
+        public function selectUser($userId){
+            $sql = "select *
+                    from users u
+                    where u.user_id = {$userId}";
+
+            $query = $this->conn->prepare($sql);
+            $query->execute();
+            
+            $result = $query->fetch(PDO::FETCH_OBJ);
+
+            return $result;
         }
     }
 ?>
