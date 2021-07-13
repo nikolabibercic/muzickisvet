@@ -9,7 +9,9 @@
         <input type="name" name="name" placeholder="Ime" required>
         <input type="email" name="email" placeholder="Email" required>
         <input type="password" name="password" placeholder="Password" required>
-        <button>Registrujte se</button>
+        <!-- Ovde se upisuje SITE KEY-->
+        <div class="g-recaptcha" data-sitekey="6LcSqpMbAAAAABb1e-VtR90PBnYVRY4vcIjEQAD0"></div>
+        <button type="submit">Registrujte se</button>
     </form>
 </section>
 

@@ -7,6 +7,7 @@
     <title>Svet muzičara</title>
     <link rel="stylesheet" href="css/style.css">
     <script src="https://kit.fontawesome.com/53eca7a38b.js" crossorigin="anonymous"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
     <header>

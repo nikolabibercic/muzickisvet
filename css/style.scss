@@ -197,6 +197,7 @@ log in form
         }
         button {
             @include btn;
+            margin-top: 30px;
             @media(max-width: 767px) {
                 margin-bottom: 20px;
             }
