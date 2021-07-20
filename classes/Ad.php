@@ -245,5 +245,13 @@
 
             return $last_id;
         }
+
+        public function incrementSeen($adId){
+            $sql = "update ads 
+            set seen = seen + 1
+            where ad_id = {$adId};";
+            $query = $this->conn->prepare($sql);
+            $query->execute();
+        }
     }
 ?>

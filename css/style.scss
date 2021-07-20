@@ -72,6 +72,14 @@ a {
     width: 30%;
     margin: auto;
 }
+.containerAds {
+    width: 40%;
+    margin: auto;
+}
+.containerSingleAd {
+    width: 80%;
+    margin: auto;
+}
 /************************
 header
 ************************/
@@ -238,7 +246,13 @@ search form
 ************************/
 .searchForm {
     padding: $padding;
+    @media(max-width: 767px) {
+        width: 90%;
+    }
     form{
+        @media(max-width: 767px) {
+            width: 100%;
+        }
         .firstPartForm {
             @include flex(center,center,row);
             @media(max-width: 767px) {
@@ -246,7 +260,7 @@ search form
             }
             input {
                 border: 2px solid $primaryColor;
-                width: 71%;
+                width: 100%;
                 height: 40px;
                 text-align: center;
                 @media(max-width: 767px) {
@@ -266,7 +280,7 @@ search form
             }
             input {
                 border: 2px solid $primaryColor;
-                width: 60%;
+                width: 100%;
                 height: 40px;
                 text-align: center;
                 @media(max-width: 767px) {
@@ -279,7 +293,7 @@ search form
             }
             select {
                 border: 2px solid $primaryColor;
-                width: 71%;
+                width: 100%;
                 height: 40px;
                 text-align: center;
                 display: none;
@@ -289,7 +303,7 @@ search form
                 }
             }
             #city {
-                width: 71%;
+                width: 100%;
                 margin-top: 20px;
                 display: none;
                 @media(max-width: 767px) {
@@ -313,7 +327,7 @@ search form
             .checkBox {
                 border: 2px solid $primaryColor;
                 margin-top: 20px;
-                width: 71%;
+                width: 100%;
                 @include flex(space-between,center,row);
                 display: none;
                 @media(max-width: 767px) {
@@ -336,7 +350,7 @@ search form
             button {
                 border: 2px solid $secondaryColor;
                 height: 40px;
-                width: 71%;
+                width: 100%;
                 background-color: $primaryColor;
                 font-weight: 700;
                 color: $white;
@@ -478,6 +492,7 @@ ad display
                 text-align: justify;
             }
             .first {
+                margin-left: 20px;
                 width: 100%;
                 @include flex(flex-start,flex-start,column);
                 h2 {
@@ -502,9 +517,13 @@ ad display
                 }
             }
             .tags {
+                margin-left: 20px;
                 width: 100%;
                 margin-top: 20px;
                 @include flex(flex-start,center,row);
+                @media(max-width: 767px) {
+                    @include flex(center,center,row);
+                }
                 p {
                     color: $primaryColor;
                     font-weight: 700;
@@ -513,6 +532,7 @@ ad display
                 }
             }
             .second {
+                margin-left: 20px;
                 width: 100%;
                 margin-top: 30px;
                 @include flex(space-between,flex-start,row);
@@ -554,6 +574,25 @@ ad display
                 }
             }
         }
+        .updateDeleteButton {
+            width: 100%;
+            margin-top: 20px;
+            @include flex(space-around,center,row);
+            #updateButton {
+                padding: 5px;
+                font-weight: 700;
+                border-radius: 5px;
+                background-color: green;
+                color: $white;
+            }
+            #deleteButton {
+                padding: 5px;
+                font-weight: 700;
+                border-radius: 5px;
+                background-color: red;
+                color: $white;
+            }
+        }
         /*
         &:hover {
             transform: scale(1.1,1.1);
@@ -572,8 +611,135 @@ ad display
                 font-size: 1.5rem;
                 font-weight: 700;
                 &:hover {
-                    background-color: $white;
+                    background-color: $secondaryColor;
+                    color: $white;
+                    border: 2px solid $primaryColor;
+                }
+            }
+        }
+    }
+}
+/************************
+ad display musicians
+************************/
+.adDisplayMusicians {
+    @include flex(space-between,center,column);
+    padding: $padding;
+    @media(max-width: 767px) {
+        width: 90%;
+    }
+    .ad {
+        @include flex(center,center,row);
+        width: 100%;
+        margin-bottom: 50px;
+        padding: 30px 30px;
+        border: 2px solid $primaryColor;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px $primaryColor;
+        @media(max-width: 767px) {
+            @include flex(space-between,center,column);
+        }
+        div {
+            width: 100%;
+            @include flex(center,center,column);
+            @media(max-width: 767px) {
+                width: 100%;
+                text-align: justify;
+            }
+            .first {
+                width: 100%;
+                @include flex(center,center,column);
+                h2 {
+                    margin-bottom: 10px;
+                    color: $secondaryColor;
+                    font-weight: 700;
+                    font-size: 1.8rem;
+                    @media(max-width: 767px) {
+                        font-size: 1.8rem;
+                        margin-bottom: 20px;
+                        text-align: center;
+                    }
+                    a{
+                        color: $secondaryColor;
+                    }
+                }
+                p {
+                    font-size: 1.2rem;
+                }
+                @media(max-width: 767px) {
+                    @include flex(center,center,column);
+                }
+            }
+            .tags {
+                width: 100%;
+                margin-top: 10px;
+                @include flex(center,center,row);
+                p {
                     color: $primaryColor;
+                    font-weight: 700;
+                    font-size: 1.1rem;
+                    margin-left: 10px;
+                }
+            }
+            .second {
+                width: 100%;
+                margin-top: 30px;
+                @include flex(space-between,flex-start,row);
+                @media(max-width: 767px) {
+                    @include flex(space-between,center,row);
+                }
+                .attributes {
+                    color: $secondaryColor;
+                    font-weight: 700;
+                    border: 2px solid $secondaryColor;
+                    border-radius: 5px;
+                    padding: 5px;
+                    @media(max-width: 767px) {
+                        margin-bottom: 10px;
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+        .updateDeleteButton {
+            width: 100%;
+            margin-top: 20px;
+            @include flex(space-around,center,row);
+            #updateButton {
+                padding: 5px;
+                font-weight: 700;
+                border-radius: 5px;
+                background-color: green;
+                color: $white;
+            }
+            #deleteButton {
+                padding: 5px;
+                font-weight: 700;
+                border-radius: 5px;
+                background-color: red;
+                color: $white;
+            }
+        }
+        /*
+        &:hover {
+            transform: scale(1.1,1.1);
+        }
+        */
+    }
+    .pagination {
+        ul{
+            list-style-type: none;
+            @include flex(space-between,center,row);
+            a {
+                color:$white;
+                background-color: $primaryColor;
+                margin-right: 20px;
+                padding: 10px;
+                font-size: 1.5rem;
+                font-weight: 700;
+                &:hover {
+                    background-color: $secondaryColor;
+                    color: $white;
                     border: 2px solid $primaryColor;
                 }
             }
@@ -615,8 +781,7 @@ single ad display
             }
         }
         #slider {
-            height: 600px;
-            width: 700px;
+            width: 800px;
             margin: 20px auto;
             border: 10px solid white;
             box-shadow: 0px 0px 5px 2px #ccc;
@@ -627,9 +792,11 @@ single ad display
                 @include flex(space-between,center,row);
             }
             #box {
-                @include flex(space-between,center,column);
+                width: 500px;
+                @include flex(flex-start,center,column);
                 img {
                     height: 400px;
+                    max-width: 500px;
                     font-weight: 700;
                     font-size: 1.3rem;
                     @media(max-width: 767px) {
@@ -643,6 +810,7 @@ single ad display
                 }
             }
             .prew {
+                border-radius: 40%;
                 padding: 10px;
                 border: none;
                 background-color: $primaryColor;
@@ -650,10 +818,11 @@ single ad display
                 color: white;
                 cursor: pointer;
                 @media(max-width: 767px) {
-                    order: 2
+                    order: 3
                 }
             }
             .next {
+                border-radius: 40%;
                 padding: 10px;
                 border: none;
                 background-color: $primaryColor;
@@ -873,5 +1042,22 @@ footer {
             font-size: 1.1rem;
             margin-top: 30px;
         }
+    }
+}
+/************************
+insert ad button
+************************/
+.insertAdButton {
+    height: 35px;
+    width: 200px;
+    background-color: green;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    @include flex(center,center,row);
+    cursor: pointer;
+    color: $white;
+    font-weight: 700;
+    &:hover {
+        background-color: #8cc63f;
     }
 }

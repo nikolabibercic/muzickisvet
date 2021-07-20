@@ -42,6 +42,16 @@ a {
   margin: auto;
 }
 
+.containerAds {
+  width: 40%;
+  margin: auto;
+}
+
+.containerSingleAd {
+  width: 80%;
+  margin: auto;
+}
+
 /************************
 header
 ************************/
@@ -328,6 +338,18 @@ search form
   padding: 50px 0;
 }
 
+@media (max-width: 767px) {
+  .searchForm {
+    width: 90%;
+  }
+}
+
+@media (max-width: 767px) {
+  .searchForm form {
+    width: 100%;
+  }
+}
+
 .searchForm form .firstPartForm {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -368,7 +390,7 @@ search form
 
 .searchForm form .firstPartForm input {
   border: 2px solid #007ec3;
-  width: 71%;
+  width: 100%;
   height: 40px;
   text-align: center;
 }
@@ -424,7 +446,7 @@ search form
 
 .searchForm form .secondPartForm input {
   border: 2px solid #007ec3;
-  width: 60%;
+  width: 100%;
   height: 40px;
   text-align: center;
 }
@@ -442,7 +464,7 @@ search form
 
 .searchForm form .secondPartForm select {
   border: 2px solid #007ec3;
-  width: 71%;
+  width: 100%;
   height: 40px;
   text-align: center;
   display: none;
@@ -456,7 +478,7 @@ search form
 }
 
 .searchForm form .secondPartForm #city {
-  width: 71%;
+  width: 100%;
   margin-top: 20px;
   display: none;
 }
@@ -486,7 +508,7 @@ search form
 .searchForm form .secondPartForm .checkBox {
   border: 2px solid #007ec3;
   margin-top: 20px;
-  width: 71%;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -544,7 +566,7 @@ search form
 .searchForm form .secondPartForm button {
   border: 2px solid #003368;
   height: 40px;
-  width: 71%;
+  width: 100%;
   background-color: #007ec3;
   font-weight: 700;
   color: white;
@@ -876,6 +898,7 @@ ad display
 }
 
 .adDisplay .ad div .first {
+  margin-left: 20px;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -938,6 +961,7 @@ ad display
 }
 
 .adDisplay .ad div .tags {
+  margin-left: 20px;
   width: 100%;
   margin-top: 20px;
   display: -webkit-box;
@@ -957,6 +981,26 @@ ad display
           flex-direction: row;
 }
 
+@media (max-width: 767px) {
+  .adDisplay .ad div .tags {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+
 .adDisplay .ad div .tags p {
   color: #007ec3;
   font-weight: 700;
@@ -965,6 +1009,7 @@ ad display
 }
 
 .adDisplay .ad div .second {
+  margin-left: 20px;
   width: 100%;
   margin-top: 30px;
   display: -webkit-box;
@@ -1049,6 +1094,41 @@ ad display
   }
 }
 
+.adDisplay .ad .updateDeleteButton {
+  width: 100%;
+  margin-top: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.adDisplay .ad .updateDeleteButton #updateButton {
+  padding: 5px;
+  font-weight: 700;
+  border-radius: 5px;
+  background-color: green;
+  color: white;
+}
+
+.adDisplay .ad .updateDeleteButton #deleteButton {
+  padding: 5px;
+  font-weight: 700;
+  border-radius: 5px;
+  background-color: red;
+  color: white;
+}
+
 .adDisplay .pagination ul {
   list-style-type: none;
   display: -webkit-box;
@@ -1078,8 +1158,325 @@ ad display
 }
 
 .adDisplay .pagination ul a:hover {
-  background-color: white;
+  background-color: #003368;
+  color: white;
+  border: 2px solid #007ec3;
+}
+
+/************************
+ad display musicians
+************************/
+.adDisplayMusicians {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 50px 0;
+}
+
+@media (max-width: 767px) {
+  .adDisplayMusicians {
+    width: 90%;
+  }
+}
+
+.adDisplayMusicians .ad {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100%;
+  margin-bottom: 50px;
+  padding: 30px 30px;
+  border: 2px solid #007ec3;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 0px 10px #007ec3;
+          box-shadow: 0px 0px 10px #007ec3;
+  /*
+        &:hover {
+            transform: scale(1.1,1.1);
+        }
+        */
+}
+
+@media (max-width: 767px) {
+  .adDisplayMusicians .ad {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.adDisplayMusicians .ad div {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+@media (max-width: 767px) {
+  .adDisplayMusicians .ad div {
+    width: 100%;
+    text-align: justify;
+  }
+}
+
+.adDisplayMusicians .ad div .first {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.adDisplayMusicians .ad div .first h2 {
+  margin-bottom: 10px;
+  color: #003368;
+  font-weight: 700;
+  font-size: 1.8rem;
+}
+
+@media (max-width: 767px) {
+  .adDisplayMusicians .ad div .first h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+}
+
+.adDisplayMusicians .ad div .first h2 a {
+  color: #003368;
+}
+
+.adDisplayMusicians .ad div .first p {
+  font-size: 1.2rem;
+}
+
+@media (max-width: 767px) {
+  .adDisplayMusicians .ad div .first {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.adDisplayMusicians .ad div .tags {
+  width: 100%;
+  margin-top: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.adDisplayMusicians .ad div .tags p {
   color: #007ec3;
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-left: 10px;
+}
+
+.adDisplayMusicians .ad div .second {
+  width: 100%;
+  margin-top: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+@media (max-width: 767px) {
+  .adDisplayMusicians .ad div .second {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+
+.adDisplayMusicians .ad div .second .attributes {
+  color: #003368;
+  font-weight: 700;
+  border: 2px solid #003368;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+@media (max-width: 767px) {
+  .adDisplayMusicians .ad div .second .attributes {
+    margin-bottom: 10px;
+    font-size: 12px;
+  }
+}
+
+.adDisplayMusicians .ad .updateDeleteButton {
+  width: 100%;
+  margin-top: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.adDisplayMusicians .ad .updateDeleteButton #updateButton {
+  padding: 5px;
+  font-weight: 700;
+  border-radius: 5px;
+  background-color: green;
+  color: white;
+}
+
+.adDisplayMusicians .ad .updateDeleteButton #deleteButton {
+  padding: 5px;
+  font-weight: 700;
+  border-radius: 5px;
+  background-color: red;
+  color: white;
+}
+
+.adDisplayMusicians .pagination ul {
+  list-style-type: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.adDisplayMusicians .pagination ul a {
+  color: white;
+  background-color: #007ec3;
+  margin-right: 20px;
+  padding: 10px;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.adDisplayMusicians .pagination ul a:hover {
+  background-color: #003368;
+  color: white;
   border: 2px solid #007ec3;
 }
 
@@ -1204,8 +1601,7 @@ single ad display
 }
 
 .singleAdDisplay .ad #slider {
-  height: 600px;
-  width: 700px;
+  width: 800px;
   margin: 20px auto;
   border: 10px solid white;
   -webkit-box-shadow: 0px 0px 5px 2px #ccc;
@@ -1250,14 +1646,15 @@ single ad display
 }
 
 .singleAdDisplay .ad #slider #box {
+  width: 500px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -1269,6 +1666,7 @@ single ad display
 
 .singleAdDisplay .ad #slider #box img {
   height: 400px;
+  max-width: 500px;
   font-weight: 700;
   font-size: 1.3rem;
 }
@@ -1290,6 +1688,7 @@ single ad display
 }
 
 .singleAdDisplay .ad #slider .prew {
+  border-radius: 40%;
   padding: 10px;
   border: none;
   background-color: #007ec3;
@@ -1300,13 +1699,14 @@ single ad display
 
 @media (max-width: 767px) {
   .singleAdDisplay .ad #slider .prew {
-    -webkit-box-ordinal-group: 3;
-        -ms-flex-order: 2;
-            order: 2;
+    -webkit-box-ordinal-group: 4;
+        -ms-flex-order: 3;
+            order: 3;
   }
 }
 
 .singleAdDisplay .ad #slider .next {
+  border-radius: 40%;
   padding: 10px;
   border: none;
   background-color: #007ec3;
@@ -1762,5 +2162,38 @@ footer .footerSection2 p {
   color: white;
   font-size: 1.1rem;
   margin-top: 30px;
+}
+
+/************************
+insert ad button
+************************/
+.insertAdButton {
+  height: 35px;
+  width: 200px;
+  background-color: green;
+  border-bottom-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  cursor: pointer;
+  color: white;
+  font-weight: 700;
+}
+
+.insertAdButton:hover {
+  background-color: #8cc63f;
 }
 /*# sourceMappingURL=style.css.map */

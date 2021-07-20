@@ -19,7 +19,7 @@
     }
 ?>
 
-<section class="singleAdDisplay container">
+<section class="singleAdDisplay containerSingleAd">
     <?php $result = $ad->selectAd($adId); foreach($result as $x):  ?>  
         <article class="ad">
             <hgroup>
@@ -50,7 +50,7 @@
                 </div>
             <div>
                 <div class="first">
-                    <h2><a href="view-music-ad.php?adId=<?php echo $x->ad_id; ?>"><?php echo $x->title; ?></a></h2>
+                    <h2><?php echo $x->title; ?></h2>
                     <p><?php echo $x->text; ?></p>
                 </div>
                 <!--Ako oglas ima tagove/atribute prikazuje ih--> 
@@ -61,7 +61,8 @@
                 </div>
                 <div class="second">
                     <p id="seen">Viđeno: <?php echo $x->seen; ?></p>
-                    <p id="city">Mesto/Grad: <?php echo $x->city; ?></p>
+                    <p id="city">Mesto: <?php echo $x->city; ?></p>
+                    <p id="city">Telefon: <?php echo $x->telephone; ?></p>
                     <p id="price">Cena: <?php echo $x->price.' '.$x->currency; ?></p>
                 </div>
             </div>
