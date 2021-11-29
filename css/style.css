@@ -1096,7 +1096,8 @@ ad display
 
 .adDisplay .ad .updateDeleteButton {
   width: 100%;
-  margin-top: 20px;
+  margin-top: 50px;
+  background-color: yellow;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1111,22 +1112,27 @@ ad display
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  text-align: center;
 }
 
 .adDisplay .ad .updateDeleteButton #updateButton {
   padding: 5px;
   font-weight: 700;
-  border-radius: 5px;
   background-color: green;
   color: white;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 50%;
+          flex: 0 50%;
 }
 
 .adDisplay .ad .updateDeleteButton #deleteButton {
   padding: 5px;
   font-weight: 700;
-  border-radius: 5px;
   background-color: red;
   color: white;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 50%;
+          flex: 0 50%;
 }
 
 .adDisplay .pagination ul {
@@ -1413,7 +1419,8 @@ ad display musicians
 
 .adDisplayMusicians .ad .updateDeleteButton {
   width: 100%;
-  margin-top: 20px;
+  margin-top: 50px;
+  background-color: yellow;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1428,22 +1435,27 @@ ad display musicians
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  text-align: center;
 }
 
 .adDisplayMusicians .ad .updateDeleteButton #updateButton {
   padding: 5px;
   font-weight: 700;
-  border-radius: 5px;
   background-color: green;
   color: white;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 50%;
+          flex: 0 50%;
 }
 
 .adDisplayMusicians .ad .updateDeleteButton #deleteButton {
   padding: 5px;
   font-weight: 700;
-  border-radius: 5px;
   background-color: red;
   color: white;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 50%;
+          flex: 0 50%;
 }
 
 .adDisplayMusicians .pagination ul {
@@ -1691,9 +1703,9 @@ single ad display
   border-radius: 40%;
   padding: 10px;
   border: none;
-  background-color: #007ec3;
+  background-color: white;
   font-size: 30px;
-  color: white;
+  color: #007ec3;
   cursor: pointer;
 }
 
@@ -1709,9 +1721,9 @@ single ad display
   border-radius: 40%;
   padding: 10px;
   border: none;
-  background-color: #007ec3;
+  background-color: white;
   font-size: 30px;
-  color: white;
+  color: #007ec3;
   cursor: pointer;
 }
 

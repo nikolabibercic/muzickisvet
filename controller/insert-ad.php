@@ -130,7 +130,7 @@
                 $check = $query->execute([$last_id,$electronicId]);
             }
 
-            header("Location: ../view-insert-ad.php?adInserted={$user->adInserted}");
+            header("Location: ../view-insert-ad.php?adInserted={$ad->adInserted}");
         }
     }
 ?>

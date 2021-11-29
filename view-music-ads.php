@@ -2,6 +2,15 @@
 
 <?php require 'partials/header.php'; ?>
 
+<!-- brisanje oglasa poruke -->
+<?php if(isset($_GET['adDeleted']) && $_GET['adDeleted']==1): ?>
+    <div class="logInRegisterSuccess">Oglas je uspešno obrisan.</div>
+<?php endif; ?>
+
+<?php if(isset($_GET['adDeleted']) && $_GET['adDeleted']==0): ?>
+    <div class="logInRegisterUnsuccess">Brisanje oglasa nije uspelo!</div>
+<?php endif; ?>
+
 <?php require 'partials/insert-ad-button.php'; ?>
 
 <?php require 'partials/search-form-ads.php'; ?>
@@ -69,8 +78,8 @@
             <?php if(isset($_SESSION['user'])): ?>
                 <?php if($user->checkUserAdmin($_SESSION['user']->user_id) or $_SESSION['user']->user_id == $x->user_id): ?>
                     <div class="updateDeleteButton">
-                        <a href="" id="updateButton">Izmeni</a>
-                        <a href="" id="deleteButton">Obriši</a>
+                        <a href="view-update-ad.php?adId=<?php echo $x->ad_id; ?>" id="updateButton">Izmeni</a>
+                        <a href="controller/delete-ad.php?adId=<?php echo $x->ad_id; ?>" id="deleteButton">Obriši</a>
                     </div>
                 <?php endif; ?>
             <?php endif; ?>

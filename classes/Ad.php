@@ -2,6 +2,8 @@
     class Ad extends ConnectionBuilder{
 
         public $adInserted = null;
+        public $adDeleted = null;
+
         public $results_per_page = 3;
 
         public function selectAdCategory(){
@@ -252,6 +254,38 @@
             where ad_id = {$adId};";
             $query = $this->conn->prepare($sql);
             $query->execute();
+        }
+
+        public function deleteAd($adId){
+            $sql1 = "delete from ad_tag where ad_id = {$adId};";
+            $query1 = $this->conn->prepare($sql1);
+            $check1 = $query1->execute();
+
+            $sql2 = "delete from ad_image where ad_id = {$adId};";
+            $query2 = $this->conn->prepare($sql2);
+            $check2 = $query2->execute();
+
+            $sql3 = "delete from ads where ad_id = {$adId};";
+            $query3 = $this->conn->prepare($sql3);
+            $check3 = $query3->execute();
+            
+            if($check3==true and $query3->rowCount()>0){
+                $this->adDeleted = true;
+            }else{
+                $this->adDeleted = false;
+            }
+        }
+
+        public function selectUserAd($adId){
+            $sql = "select a.ad_id, a.title, a.text, a.country_id, a.city, a.super_category_id, a.ad_category_id, a.price, a.currency_id, a.telephone 
+                    from ads a
+                    where a.ad_id = {$adId};";
+            $query = $this->conn->prepare($sql);
+            $query->execute();
+            
+            $result = $query->fetchAll(PDO::FETCH_OBJ);
+
+            return $result;
         }
     }
 ?>

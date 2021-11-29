@@ -3,19 +3,19 @@
 <?php require 'partials/header.php'; ?>
 
 <!-- logovanje poruke -->
-<?php if(isset($_GET['userLogged']) && $_GET['userLogged']==true): ?>
+<?php if(isset($_GET['userLogged']) && $_GET['userLogged']==1): ?>
     <div class="logInRegisterSuccess">Uspešno ste se logovali.</div>
 <?php endif; ?>
-<?php if(isset($_GET['userLogged']) && $_GET['userLogged']==false): ?>
+<?php if(isset($_GET['userLogged']) && $_GET['userLogged']==0): ?>
     <div class="logInRegisterUnsuccess">Logovanje nije uspelo!</div>
 <?php endif; ?>
 
 <!-- registracija poruke -->
-<?php if(isset($_GET['userRegistered']) && $_GET['userRegistered']==true): ?>
-    <div class="logInRegisterSuccess">Registracija uspešna. Ulogujte se</div>
+<?php if(isset($_GET['userRegistered']) && $_GET['userRegistered']==1): ?>
+    <div class="logInRegisterSuccess">Registracija uspešna. Ulogujte se.</div>
 <?php endif; ?>
 
-<?php if(isset($_GET['userRegistered']) && $_GET['userRegistered']==false): ?>
+<?php if(isset($_GET['userRegistered']) && $_GET['userRegistered']==0): ?>
     <div class="logInRegisterUnsuccess">Registracija nije uspela!</div>
 <?php endif; ?>
 

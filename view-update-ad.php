@@ -18,22 +18,34 @@
     }
 ?>
 
+<?php
+    $adId = $_GET['adId'];
+?>
+
 <!-- register form -->
 <section class="insertAdForm container" id="insertAdForm">
     <h2>Postavi oglas</h2>
     <form action="controller/insert-ad.php" method="POST" autocomplete="on" enctype="multipart/form-data">
+    
         <h3>Naslov:</h3>
-        <input type="text" name="title" placeholder="" required>
+            <?php $result1 = $ad->selectUserAd($adId); foreach($result1 as $y): ?>
+                <input type="text" name="title" placeholder="" value=<?php echo $y->title; ?> required>
+            <?php endforeach; ?>
         <h3>Tekst oglasa:</h3>
-        <textarea name="text" id="" cols="40" rows="10" placeholder="" required></textarea>
+            <?php $result1 = $ad->selectUserAd($adId); foreach($result1 as $y): ?>
+                <textarea name="text" id="" cols="40" rows="10" placeholder="" required><?php echo $y->text; ?></textarea>
+            <?php endforeach; ?>
         <h3>Država:</h3>
         <select name="countryId" id="">
+            <option value="">Srbija</option>
             <?php  $result = $ad->selectAdCountry(); foreach($result as $x):  ?>
                 <option value=<?php echo $x->country_id; ?> class="form-control"><?php echo $x->name; ?></option>
             <?php endforeach; ?>
         </select>
         <h3>Grad:</h3>
-        <input type="text" name="city" placeholder="" required>
+            <?php $result1 = $ad->selectUserAd($adId); foreach($result1 as $y): ?>
+                <input type="text" name="city" placeholder="" value=<?php echo $y->city; ?> required>
+            <?php endforeach; ?>
         <h3>Muzičari/Mali oglasi:</h3>
         <select name="superCategoryId" id="">
             <?php  $result = $ad->selectAdSuperCategory(); foreach($result as $x):  ?>
@@ -77,8 +89,12 @@
                 </div>
             <?php endforeach; ?>
         </section>
-        <button type="submit" name="submit">Postavi oglas</button>
+        <button type="submit" name="submit">Izmeni oglas</button>
+
     </form>
+    
 </section>
+
+
 
 <?php require 'partials/footer.php'; ?>

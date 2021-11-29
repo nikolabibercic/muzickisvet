@@ -2,6 +2,15 @@
 
 <?php require 'partials/header.php'; ?>
 
+<!-- brisanje oglasa poruke -->
+<?php if(isset($_GET['adDeleted']) && $_GET['adDeleted']==1): ?>
+    <div class="logInRegisterSuccess">Oglas je uspešno obrisan.</div>
+<?php endif; ?>
+
+<?php if(isset($_GET['adDeleted']) && $_GET['adDeleted']==0): ?>
+    <div class="logInRegisterUnsuccess">Brisanje oglasa nije uspelo!</div>
+<?php endif; ?>
+
 <?php require 'partials/insert-ad-button.php'; ?>
 
 <?php require 'partials/search-form-musicians.php'; ?>
@@ -41,11 +50,11 @@
                 <div class="first">
                     <h2><a href="partials/ad-prewiev-counter.php?adId=<?php echo $x->ad_id; ?>"><?php echo $x->title; ?></a></h2>
                 </div>
-                <!--Ako oglas ima tagove/atribute prikazuje ih--> 
+                <!--Ako oglas ima tagove/atribute prikazuje ih-->
                 <div class="tags">
-                    <?php  $resultTags = $ad->selectAdTags($x->ad_id); foreach($resultTags as $y):  ?> 
+                    <?php  $resultTags = $ad->selectAdTags($x->ad_id); foreach($resultTags as $y):  ?>
                         <p><?php echo '#'.$y->name ?></p>
-                    <?php  endforeach;  ?> 
+                    <?php  endforeach;  ?>
                 </div>
                 <div class="second">
                     <p class="attributes">Viđeno: <?php echo $x->seen; ?></p>
@@ -56,8 +65,8 @@
             <?php if(isset($_SESSION['user'])): ?>
                 <?php if($user->checkUserAdmin($_SESSION['user']->user_id) or $_SESSION['user']->user_id == $x->user_id): ?>
                     <div class="updateDeleteButton">
-                        <a href="" id="updateButton">Izmeni</a>
-                        <a href="" id="deleteButton">Obriši</a>
+                        <a href="view-update-ad.php?adId=<?php echo $x->ad_id; ?>" id="updateButton">Izmeni</a>
+                        <a href="controller/delete-ad-musician.php?adId=<?php echo $x->ad_id; ?>" id="deleteButton">Obriši</a>
                     </div>
                 <?php endif; ?>
             <?php endif; ?>

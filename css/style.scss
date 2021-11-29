@@ -576,21 +576,23 @@ ad display
         }
         .updateDeleteButton {
             width: 100%;
-            margin-top: 20px;
+            margin-top: 50px;
+            background-color: yellow;
             @include flex(space-around,center,row);
+            text-align: center;
             #updateButton {
                 padding: 5px;
                 font-weight: 700;
-                border-radius: 5px;
                 background-color: green;
                 color: $white;
+                flex: 0 50%;
             }
             #deleteButton {
                 padding: 5px;
                 font-weight: 700;
-                border-radius: 5px;
                 background-color: red;
                 color: $white;
+                flex: 0 50%;
             }
         }
         /*
@@ -703,21 +705,23 @@ ad display musicians
         }
         .updateDeleteButton {
             width: 100%;
-            margin-top: 20px;
+            margin-top: 50px;
+            background-color: yellow;
             @include flex(space-around,center,row);
+            text-align: center;
             #updateButton {
                 padding: 5px;
                 font-weight: 700;
-                border-radius: 5px;
                 background-color: green;
                 color: $white;
+                flex: 0 50%;
             }
             #deleteButton {
                 padding: 5px;
                 font-weight: 700;
-                border-radius: 5px;
                 background-color: red;
                 color: $white;
+                flex: 0 50%;
             }
         }
         /*
@@ -813,9 +817,9 @@ single ad display
                 border-radius: 40%;
                 padding: 10px;
                 border: none;
-                background-color: $primaryColor;
+                background-color: $white;
                 font-size: 30px;
-                color: white;
+                color: $primaryColor;
                 cursor: pointer;
                 @media(max-width: 767px) {
                     order: 3
@@ -825,9 +829,9 @@ single ad display
                 border-radius: 40%;
                 padding: 10px;
                 border: none;
-                background-color: $primaryColor;
+                background-color: $white;
                 font-size: 30px;
-                color: white;
+                color: $primaryColor;
                 cursor: pointer;
                 @media(max-width: 767px) {
                     order: 3

@@ -10,5 +10,4 @@
 <?php endif; ?>
 
 
-
 <?php require 'partials/footer.php'; ?>
