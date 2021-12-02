@@ -8,6 +8,7 @@
         public $roleAdded = null;
         public $roleDeleted = null;
         public $userExists = null;
+        public $passwordChanged = null;
 
         public function loginUser($email,$password){
             $sql = "select * from users u where u.email = ? and u.password = ? ";
@@ -36,6 +37,30 @@
             $result = $query->fetch(PDO::FETCH_OBJ);
 
             return $result;
+        }
+
+        public function changePassword($email){
+            $newPassword = rand(10000,99999);
+            $sql = "update users 
+            set password = '{$newPassword}'
+            where email = '{$email}';";
+            $query = $this->conn->prepare($sql);
+            $query->execute();
+
+            if($query->rowCount()>0){
+
+                $from = 'svetmuzicara@svetmuzicara.com';
+                $to = $email;
+                $subject = 'Svet muzicara: Promena lozinke';
+                $message = 'Nova lozinka je: '.$newPassword;
+                $header = 'FROM: '.$from;
+        
+                mail($to,$subject,$message,$header);
+
+                $this->passwordChanged = true;
+            }else{
+                $this->passwordChanged = false;
+            }
         }
 
         public function registerUser($name,$email,$password){

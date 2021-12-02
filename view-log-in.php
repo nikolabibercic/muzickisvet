@@ -2,6 +2,14 @@
 
 <?php require 'partials/header.php'; ?>
 
+<!-- reset lozinke poruke -->
+<?php if(isset($_GET['passwordChanged']) && $_GET['passwordChanged']==1): ?>
+    <div class="messageSuccess">Uspešno ste se resetovali lozinku. Ulogujete se sa novom lozinkom.</div>
+<?php endif; ?>
+<?php if(isset($_GET['passwordChanged']) && $_GET['passwordChanged']==0): ?>
+    <div class="messageUnsuccess">Resetovanje lozinke nije uspelo! Proverite email adresu.</div>
+<?php endif; ?>
+
 <!-- logovanje poruke -->
 <?php if(isset($_GET['userLogged']) && $_GET['userLogged']==1): ?>
     <div class="messageSuccess">Uspešno ste se logovali.</div>
@@ -27,6 +35,7 @@
         <input type="password" name="password" placeholder="Password" required>
         <button>Ulogujte se</button>
         <p>Nemate nalog? <a href="view-register.php#RegisterForm">Registrujte se</a></p>
+        <p>Zaboravili ste loziku? <a href="view-change-password.php">Resetuj lozinku</a></p>
     </form>
 </section>
 
