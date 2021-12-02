@@ -8,7 +8,8 @@
         $countryId = $_POST['countryId'];
         $city = $_POST['city'];
         $categoryId = $_POST['categoryId'];
-        $superCategoryId = $_POST['superCategoryId'];
+        //$superCategoryId = $_POST['superCategoryId'];
+        $superCategoryId = 1;
         $price = $_POST['price'];
         $currencyId = $_POST['currencyId'];
         $userId = $_SESSION['user']->user_id;

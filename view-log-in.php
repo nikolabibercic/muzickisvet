@@ -4,19 +4,19 @@
 
 <!-- logovanje poruke -->
 <?php if(isset($_GET['userLogged']) && $_GET['userLogged']==1): ?>
-    <div class="logInRegisterSuccess">Uspešno ste se logovali.</div>
+    <div class="messageSuccess">Uspešno ste se logovali.</div>
 <?php endif; ?>
 <?php if(isset($_GET['userLogged']) && $_GET['userLogged']==0): ?>
-    <div class="logInRegisterUnsuccess">Logovanje nije uspelo!</div>
+    <div class="messageUnsuccess">Logovanje nije uspelo!</div>
 <?php endif; ?>
 
 <!-- registracija poruke -->
 <?php if(isset($_GET['userRegistered']) && $_GET['userRegistered']==1): ?>
-    <div class="logInRegisterSuccess">Registracija uspešna. Ulogujte se.</div>
+    <div class="messageSuccess">Registracija uspešna. Ulogujte se.</div>
 <?php endif; ?>
 
 <?php if(isset($_GET['userRegistered']) && $_GET['userRegistered']==0): ?>
-    <div class="logInRegisterUnsuccess">Registracija nije uspela!</div>
+    <div class="messageUnsuccess">Registracija nije uspela!</div>
 <?php endif; ?>
 
 <!-- contact form -->

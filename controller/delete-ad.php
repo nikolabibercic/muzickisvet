@@ -9,6 +9,6 @@
 
         $ad->deleteAd($adId);
 
-        header("Location: ../view-music-ads.php?adDeleted={$ad->adDeleted}");
+        header("Location: ../index.php?adDeleted={$ad->adDeleted}");
     }
 ?>

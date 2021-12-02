@@ -26,7 +26,7 @@
 
             <button type="submit">Traži</button>
 
-            <p id="unhideExtraSearch">Ukloni dodatnu pretragu</p>
+            <p id="unhideExtraSearch">Ukloni</p>
         </div>
     </form>
 </section>

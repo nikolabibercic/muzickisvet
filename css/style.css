@@ -155,6 +155,7 @@ header nav ul li a {
 
 header nav ul li a:hover {
   background: white;
+  border-radius: 10px;
   color: #007ec3;
   padding: 5px;
 }
@@ -312,9 +313,9 @@ log in form
 }
 
 /************************
-logg in / register success message
+success message
 ************************/
-.logInRegisterSuccess {
+.messageSuccess {
   text-align: center;
   background: green;
   color: white;
@@ -322,9 +323,9 @@ logg in / register success message
 }
 
 /************************
-logg in / register unsuccess message
+unsuccess message
 ************************/
-.logInRegisterUnsuccess {
+.messageUnsuccess {
   text-align: center;
   background: red;
   color: white;
@@ -393,6 +394,7 @@ search form
   width: 100%;
   height: 40px;
   text-align: center;
+  border-radius: 10px;
 }
 
 @media (max-width: 767px) {
@@ -449,6 +451,7 @@ search form
   width: 100%;
   height: 40px;
   text-align: center;
+  border-radius: 10px;
 }
 
 @media (max-width: 767px) {
@@ -469,6 +472,7 @@ search form
   text-align: center;
   display: none;
   margin-top: 20px;
+  border-radius: 10px;
 }
 
 @media (max-width: 767px) {
@@ -493,15 +497,14 @@ search form
   background-color: red;
   color: white;
   border: 2px solid red;
-  border-radius: 10px;
   padding: 3px;
   display: none;
   margin-top: 20px;
+  text-align: center;
+  border-radius: 10px;
 }
 
 .searchForm form .secondPartForm #unhideExtraSearch:hover {
-  background-color: white;
-  color: red;
   cursor: pointer;
 }
 
@@ -525,6 +528,7 @@ search form
       -ms-flex-direction: row;
           flex-direction: row;
   display: none;
+  border-radius: 10px;
 }
 
 @media (max-width: 767px) {
@@ -571,6 +575,8 @@ search form
   font-weight: 700;
   color: white;
   margin-top: 20px;
+  border-radius: 10px;
+  cursor: pointer;
 }
 
 @media (max-width: 767px) {
@@ -628,16 +634,19 @@ insert ad form
   border: 2px solid #007ec3;
   font-size: 16px;
   width: 60%;
+  border-radius: 10px;
 }
 
 .insertAdForm form input {
   text-align: center;
   height: 40px;
+  border-radius: 10px;
 }
 
 .insertAdForm form select {
   text-align: center;
   height: 40px;
+  border-radius: 10px;
 }
 
 .insertAdForm form h3 {
@@ -650,6 +659,7 @@ insert ad form
 .insertAdForm form .uploadImage {
   border: none;
   margin-top: 10px;
+  border-radius: 10px;
 }
 
 .insertAdForm form .checkBox {
@@ -657,6 +667,7 @@ insert ad form
   margin-top: 20px;
   margin-bottom: 20px;
   width: 50%;
+  border-radius: 10px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -719,6 +730,7 @@ insert ad form
   border-radius: 10px;
   border-radius: 0px;
   margin-top: 20px;
+  border-radius: 10px;
 }
 
 .insertAdForm form button:hover {
@@ -1094,7 +1106,7 @@ ad display
   }
 }
 
-.adDisplay .ad .updateDeleteButton {
+.adDisplay .ad .DeleteButton {
   width: 100%;
   margin-top: 50px;
   background-color: yellow;
@@ -1115,24 +1127,14 @@ ad display
   text-align: center;
 }
 
-.adDisplay .ad .updateDeleteButton #updateButton {
-  padding: 5px;
-  font-weight: 700;
-  background-color: green;
-  color: white;
-  -webkit-box-flex: 0;
-      -ms-flex: 0 50%;
-          flex: 0 50%;
-}
-
-.adDisplay .ad .updateDeleteButton #deleteButton {
+.adDisplay .ad .DeleteButton #deleteButton {
   padding: 5px;
   font-weight: 700;
   background-color: red;
   color: white;
   -webkit-box-flex: 0;
-      -ms-flex: 0 50%;
-          flex: 0 50%;
+      -ms-flex: 0 100%;
+          flex: 0 100%;
 }
 
 .adDisplay .pagination ul {
@@ -1164,329 +1166,6 @@ ad display
 }
 
 .adDisplay .pagination ul a:hover {
-  background-color: #003368;
-  color: white;
-  border: 2px solid #007ec3;
-}
-
-/************************
-ad display musicians
-************************/
-.adDisplayMusicians {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  padding: 50px 0;
-}
-
-@media (max-width: 767px) {
-  .adDisplayMusicians {
-    width: 90%;
-  }
-}
-
-.adDisplayMusicians .ad {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  width: 100%;
-  margin-bottom: 50px;
-  padding: 30px 30px;
-  border: 2px solid #007ec3;
-  border-radius: 10px;
-  -webkit-box-shadow: 0px 0px 10px #007ec3;
-          box-shadow: 0px 0px 10px #007ec3;
-  /*
-        &:hover {
-            transform: scale(1.1,1.1);
-        }
-        */
-}
-
-@media (max-width: 767px) {
-  .adDisplayMusicians .ad {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-}
-
-.adDisplayMusicians .ad div {
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-@media (max-width: 767px) {
-  .adDisplayMusicians .ad div {
-    width: 100%;
-    text-align: justify;
-  }
-}
-
-.adDisplayMusicians .ad div .first {
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-.adDisplayMusicians .ad div .first h2 {
-  margin-bottom: 10px;
-  color: #003368;
-  font-weight: 700;
-  font-size: 1.8rem;
-}
-
-@media (max-width: 767px) {
-  .adDisplayMusicians .ad div .first h2 {
-    font-size: 1.8rem;
-    margin-bottom: 20px;
-    text-align: center;
-  }
-}
-
-.adDisplayMusicians .ad div .first h2 a {
-  color: #003368;
-}
-
-.adDisplayMusicians .ad div .first p {
-  font-size: 1.2rem;
-}
-
-@media (max-width: 767px) {
-  .adDisplayMusicians .ad div .first {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-}
-
-.adDisplayMusicians .ad div .tags {
-  width: 100%;
-  margin-top: 10px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-}
-
-.adDisplayMusicians .ad div .tags p {
-  color: #007ec3;
-  font-weight: 700;
-  font-size: 1.1rem;
-  margin-left: 10px;
-}
-
-.adDisplayMusicians .ad div .second {
-  width: 100%;
-  margin-top: 30px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-}
-
-@media (max-width: 767px) {
-  .adDisplayMusicians .ad div .second {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-  }
-}
-
-.adDisplayMusicians .ad div .second .attributes {
-  color: #003368;
-  font-weight: 700;
-  border: 2px solid #003368;
-  border-radius: 5px;
-  padding: 5px;
-}
-
-@media (max-width: 767px) {
-  .adDisplayMusicians .ad div .second .attributes {
-    margin-bottom: 10px;
-    font-size: 12px;
-  }
-}
-
-.adDisplayMusicians .ad .updateDeleteButton {
-  width: 100%;
-  margin-top: 50px;
-  background-color: yellow;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  text-align: center;
-}
-
-.adDisplayMusicians .ad .updateDeleteButton #updateButton {
-  padding: 5px;
-  font-weight: 700;
-  background-color: green;
-  color: white;
-  -webkit-box-flex: 0;
-      -ms-flex: 0 50%;
-          flex: 0 50%;
-}
-
-.adDisplayMusicians .ad .updateDeleteButton #deleteButton {
-  padding: 5px;
-  font-weight: 700;
-  background-color: red;
-  color: white;
-  -webkit-box-flex: 0;
-      -ms-flex: 0 50%;
-          flex: 0 50%;
-}
-
-.adDisplayMusicians .pagination ul {
-  list-style-type: none;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-}
-
-.adDisplayMusicians .pagination ul a {
-  color: white;
-  background-color: #007ec3;
-  margin-right: 20px;
-  padding: 10px;
-  font-size: 1.5rem;
-  font-weight: 700;
-}
-
-.adDisplayMusicians .pagination ul a:hover {
   background-color: #003368;
   color: white;
   border: 2px solid #007ec3;
@@ -2180,32 +1859,16 @@ footer .footerSection2 p {
 insert ad button
 ************************/
 .insertAdButton {
-  height: 35px;
-  width: 200px;
-  background-color: green;
-  border-bottom-right-radius: 15px;
-  border-bottom-left-radius: 15px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  background-color: #0ae90a;
+  border-radius: 10px;
   cursor: pointer;
   color: white;
   font-weight: 700;
+  padding: 5px;
 }
 
 .insertAdButton:hover {
-  background-color: #8cc63f;
+  background-color: white;
+  color: #007ec3;
 }
 /*# sourceMappingURL=style.css.map */

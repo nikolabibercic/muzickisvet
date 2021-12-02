@@ -7,6 +7,7 @@
         public $userRegistered = null;
         public $roleAdded = null;
         public $roleDeleted = null;
+        public $userExists = null;
 
         public function loginUser($email,$password){
             $sql = "select * from users u where u.email = ? and u.password = ? ";
@@ -25,6 +26,16 @@
             }else{
                 header("Location: ../view-log-in.php?userLogged={$this->userLogged}");
             }       
+        }
+
+        public function checkEmail($email){
+            $sql = "select * from users u where u.email = '{$email}'";
+            $query = $this->conn->prepare($sql);
+            $query->execute();
+            
+            $result = $query->fetch(PDO::FETCH_OBJ);
+
+            return $result;
         }
 
         public function registerUser($name,$email,$password){

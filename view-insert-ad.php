@@ -4,11 +4,11 @@
 
 <!-- brisanje oglasa poruke -->
 <?php if(isset($_GET['adInserted']) && $_GET['adInserted']==1): ?>
-    <div class="logInRegisterSuccess">Oglas je uspešno kreiran.</div>
+    <div class="messageSuccess">Oglas je uspešno kreiran.</div>
 <?php endif; ?>
 
 <?php if(isset($_GET['adInserted']) && $_GET['adInserted']==0): ?>
-    <div class="logInRegisterUnsuccess">Kreiranje oglasa nije uspelo!</div>
+    <div class="messageUnsuccess">Kreiranje oglasa nije uspelo!</div>
 <?php endif; ?>
 
 <?php 
@@ -20,7 +20,7 @@
 
 <!-- register form -->
 <section class="insertAdForm container" id="insertAdForm">
-    <h2>Postavi oglas</h2>
+    <h2>Postavite oglas</h2>
     <form action="controller/insert-ad.php" method="POST" autocomplete="on" enctype="multipart/form-data">
         <h3>Naslov:</h3>
         <input type="text" name="title" placeholder="" required>
@@ -34,12 +34,6 @@
         </select>
         <h3>Grad:</h3>
         <input type="text" name="city" placeholder="" required>
-        <h3>Muzičari/Mali oglasi:</h3>
-        <select name="superCategoryId" id="">
-            <?php  $result = $ad->selectAdSuperCategory(); foreach($result as $x):  ?>
-                <option value=<?php echo $x->super_category_id; ?> class="form-control"><?php echo $x->name; ?></option>
-            <?php endforeach; ?>
-        </select>
         <h3>Kategorija:</h3>
         <select name="categoryId" id="">
             <?php  $result = $ad->selectAdCategory(); foreach($result as $x):  ?>

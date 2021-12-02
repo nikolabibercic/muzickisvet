@@ -126,6 +126,7 @@ header {
                     color: $white;
                     &:hover {
                         background: $white;
+                        border-radius: 10px;
                         color: $primaryColor;
                         padding: 5px;
                     }
@@ -224,18 +225,18 @@ log in form
     }
 }
 /************************
-logg in / register success message
+success message
 ************************/
-.logInRegisterSuccess {
+.messageSuccess {
     text-align: center;
     background: green;
     color: $white;
     width: 100%;
 }
 /************************
-logg in / register unsuccess message
+unsuccess message
 ************************/
-.logInRegisterUnsuccess {
+.messageUnsuccess {
     text-align: center;
     background: red;
     color: $white;
@@ -263,6 +264,7 @@ search form
                 width: 100%;
                 height: 40px;
                 text-align: center;
+                border-radius: 10px;
                 @media(max-width: 767px) {
                     width: 100%;
                     margin-top: 10px;
@@ -283,6 +285,7 @@ search form
                 width: 100%;
                 height: 40px;
                 text-align: center;
+                border-radius: 10px;
                 @media(max-width: 767px) {
                     width: 100%;
                     margin-top: 10px;
@@ -298,6 +301,7 @@ search form
                 text-align: center;
                 display: none;
                 margin-top: 20px;
+                border-radius: 10px;
                 @media(max-width: 767px) {
                     width: 100%;
                 }
@@ -314,13 +318,12 @@ search form
                 background-color: red;
                 color: $white;
                 border: 2px solid red;
-                border-radius: 10px;
                 padding: 3px;
                 display: none;
                 margin-top: 20px;
+                text-align: center;
+                border-radius: 10px;
                 &:hover {
-                    background-color: white;
-                    color: red;
                     cursor: pointer;
                 }
             }
@@ -330,6 +333,7 @@ search form
                 width: 100%;
                 @include flex(space-between,center,row);
                 display: none;
+                border-radius: 10px;
                 @media(max-width: 767px) {
                     width: 100%;
                 }
@@ -355,6 +359,8 @@ search form
                 font-weight: 700;
                 color: $white;
                 margin-top: 20px;
+                border-radius: 10px;
+                cursor: pointer;
                 @media(max-width: 767px) {
                     width: 100%;
                     margin-top: 10px;
@@ -388,14 +394,17 @@ insert ad form
             border: 2px solid $primaryColor;
             font-size: 16px;
             width: 60%;
+            border-radius: 10px;
         }
         input {
             text-align: center;
             height: 40px;
+            border-radius: 10px;
         }
         select {
             text-align: center;
             height: 40px;
+            border-radius: 10px;
         }
         h3 {
             text-align: left;
@@ -406,12 +415,14 @@ insert ad form
         .uploadImage {
             border: none;
             margin-top: 10px;
+            border-radius: 10px;
         }
         .checkBox {
             border: 2px solid $primaryColor;
             margin-top: 20px;
             margin-bottom: 20px;
             width: 50%;
+            border-radius: 10px;
             @include flex(space-between,center,row);
             @media(max-width: 767px) {
                 padding: 0 20px;
@@ -434,6 +445,7 @@ insert ad form
             @include btn;
             border-radius: 0px;
             margin-top: 20px;
+            border-radius: 10px;
             @media(max-width: 767px) {
                 margin-bottom: 20px;
             }
@@ -574,25 +586,18 @@ ad display
                 }
             }
         }
-        .updateDeleteButton {
+        .DeleteButton {
             width: 100%;
             margin-top: 50px;
             background-color: yellow;
             @include flex(space-around,center,row);
             text-align: center;
-            #updateButton {
-                padding: 5px;
-                font-weight: 700;
-                background-color: green;
-                color: $white;
-                flex: 0 50%;
-            }
             #deleteButton {
                 padding: 5px;
                 font-weight: 700;
                 background-color: red;
                 color: $white;
-                flex: 0 50%;
+                flex: 0 100%;
             }
         }
         /*
@@ -621,135 +626,7 @@ ad display
         }
     }
 }
-/************************
-ad display musicians
-************************/
-.adDisplayMusicians {
-    @include flex(space-between,center,column);
-    padding: $padding;
-    @media(max-width: 767px) {
-        width: 90%;
-    }
-    .ad {
-        @include flex(center,center,row);
-        width: 100%;
-        margin-bottom: 50px;
-        padding: 30px 30px;
-        border: 2px solid $primaryColor;
-        border-radius: 10px;
-        box-shadow: 0px 0px 10px $primaryColor;
-        @media(max-width: 767px) {
-            @include flex(space-between,center,column);
-        }
-        div {
-            width: 100%;
-            @include flex(center,center,column);
-            @media(max-width: 767px) {
-                width: 100%;
-                text-align: justify;
-            }
-            .first {
-                width: 100%;
-                @include flex(center,center,column);
-                h2 {
-                    margin-bottom: 10px;
-                    color: $secondaryColor;
-                    font-weight: 700;
-                    font-size: 1.8rem;
-                    @media(max-width: 767px) {
-                        font-size: 1.8rem;
-                        margin-bottom: 20px;
-                        text-align: center;
-                    }
-                    a{
-                        color: $secondaryColor;
-                    }
-                }
-                p {
-                    font-size: 1.2rem;
-                }
-                @media(max-width: 767px) {
-                    @include flex(center,center,column);
-                }
-            }
-            .tags {
-                width: 100%;
-                margin-top: 10px;
-                @include flex(center,center,row);
-                p {
-                    color: $primaryColor;
-                    font-weight: 700;
-                    font-size: 1.1rem;
-                    margin-left: 10px;
-                }
-            }
-            .second {
-                width: 100%;
-                margin-top: 30px;
-                @include flex(space-between,flex-start,row);
-                @media(max-width: 767px) {
-                    @include flex(space-between,center,row);
-                }
-                .attributes {
-                    color: $secondaryColor;
-                    font-weight: 700;
-                    border: 2px solid $secondaryColor;
-                    border-radius: 5px;
-                    padding: 5px;
-                    @media(max-width: 767px) {
-                        margin-bottom: 10px;
-                        font-size: 12px;
-                    }
-                }
-            }
-        }
-        .updateDeleteButton {
-            width: 100%;
-            margin-top: 50px;
-            background-color: yellow;
-            @include flex(space-around,center,row);
-            text-align: center;
-            #updateButton {
-                padding: 5px;
-                font-weight: 700;
-                background-color: green;
-                color: $white;
-                flex: 0 50%;
-            }
-            #deleteButton {
-                padding: 5px;
-                font-weight: 700;
-                background-color: red;
-                color: $white;
-                flex: 0 50%;
-            }
-        }
-        /*
-        &:hover {
-            transform: scale(1.1,1.1);
-        }
-        */
-    }
-    .pagination {
-        ul{
-            list-style-type: none;
-            @include flex(space-between,center,row);
-            a {
-                color:$white;
-                background-color: $primaryColor;
-                margin-right: 20px;
-                padding: 10px;
-                font-size: 1.5rem;
-                font-weight: 700;
-                &:hover {
-                    background-color: $secondaryColor;
-                    color: $white;
-                    border: 2px solid $primaryColor;
-                }
-            }
-        }
-    }
-}
+
 /************************
 single ad display
 ************************/
@@ -1052,16 +929,14 @@ footer {
 insert ad button
 ************************/
 .insertAdButton {
-    height: 35px;
-    width: 200px;
-    background-color: green;
-    border-bottom-right-radius: 15px;
-    border-bottom-left-radius: 15px;
-    @include flex(center,center,row);
+    background-color: rgb(10, 233, 10);
+    border-radius: 10px;
     cursor: pointer;
     color: $white;
     font-weight: 700;
+    padding: 5px;
     &:hover {
-        background-color: #8cc63f;
+        background-color: white;
+        color: $primaryColor;
     }
 }

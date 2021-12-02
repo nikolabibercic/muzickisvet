@@ -2,6 +2,19 @@
 
 <?php require 'partials/header.php'; ?>
 
+<!-- registracija poruke -->
+<?php if(isset($_GET['userRegistered']) && $_GET['userRegistered']==1): ?>
+    <div class="messageSuccess">Registracija uspešna. Ulogujte se.</div>
+<?php endif; ?>
+
+<?php if(isset($_GET['userRegistered']) && $_GET['userRegistered']==0): ?>
+    <div class="messageUnsuccess">Registracija nije uspela!</div>
+<?php endif; ?>
+
+<?php if(isset($_GET['userExists']) && $_GET['userExists']==1): ?>
+    <div class="messageUnsuccess">Registracija nije uspela! Email vec postoji.</div>
+<?php endif; ?>
+
 <!-- register form -->
 <section class="logInRegisterForm container" id="RegisterForm">
     <h2>Registrujte se</h2>
