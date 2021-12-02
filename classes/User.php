@@ -52,7 +52,7 @@
                 $from = 'svetmuzicara@svetmuzicara.com';
                 $to = $email;
                 $subject = 'Svet muzicara: Promena lozinke';
-                $message = 'Nova lozinka je: '.$newPassword;
+                $message = 'Nova lozinka je: '.$newPassword.'<a href="www.svetmuzicara.com/view-log-in.php"> ulogujte se</a>';
                 $header = 'FROM: '.$from;
         
                 mail($to,$subject,$message,$header);
@@ -103,6 +103,16 @@
         }
 
         public function updateUserImage($filePath,$userId){
+            $sql = "select u.profile_image
+                    from users u
+                    where user_id = {$userId};";
+            $query = $this->conn->prepare($sql);
+            $query->execute();
+            $result = $query->fetchAll(PDO::FETCH_OBJ);
+            foreach($result as $x){
+                unlink('../uploads/'.$x->profile_image);
+            }
+
             $sql = "update users 
             set profile_image = '{$filePath}'
             where user_id = {$userId};";
@@ -110,9 +120,9 @@
             $query->execute();
         }
 
-        public function updateUser($name,$countryId,$city,$telephone,$userId){
+        public function updateUser($name,$countryId,$city,$telephone,$password,$userId){
             $sql = "update users 
-            set name = '{$name}', country_id = {$countryId}, city = '{$city}', telephone = '{$telephone}'
+            set name = '{$name}', country_id = {$countryId}, city = '{$city}', telephone = '{$telephone}', password = '{$password}'
             where user_id = {$userId};";
             $query = $this->conn->prepare($sql);
             $query->execute();

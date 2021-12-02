@@ -1,6 +1,6 @@
 <!-- search form -->
 <section class="searchForm containerAds" id="searchForm">
-    <form action="view-music-ads.php" method="GET" autocomplete="on">
+    <form action="index.php" method="GET" autocomplete="on">
         <div class="firstPartForm">
             <input type="search" id="search" name="search" placeholder="Pretraga oglasa">
             

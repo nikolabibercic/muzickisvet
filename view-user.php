@@ -45,6 +45,8 @@
         <input type="text" name="city" placeholder="Mesto/Grad" value="<?php echo $result->city; ?>" >
         <h3>Telefon:</h3>
         <input type="text" name="telephone" placeholder="Telefon" value="<?php echo $result->telephone; ?>" >
+        <h3>Lozinka:</h3>
+        <input type="text" name="password" placeholder="Lozinka" value="<?php echo $result->password; ?>" >
         <button>Sačuvaj podatke</button>
     </form>
 </section>

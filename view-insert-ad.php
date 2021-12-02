@@ -41,15 +41,15 @@
             <?php endforeach; ?>
         </select>
         <h3>Cena:</h3>
-        <input type="number" name="price" placeholder="" required>
+        <input type="number" name="price" placeholder="">
         <h3>Valuta:</h3>
         <select name="currencyId" id="">
             <?php  $result = $ad->selectAdCurrency(); foreach($result as $x):  ?>
                 <option value=<?php echo $x->currency_id; ?> class="form-control"><?php echo $x->name; ?></option>
             <?php endforeach; ?>
         </select>
-        <h3>Telefon:</h3>
-        <input type="text" name="telephone" placeholder="Telefon">
+        <h3>Kontakt:</h3>
+        <input type="text" name="contact" placeholder="Kontakt">
 
         <h3>Slika 1 (opciono):</h3>
         <input class="uploadImage" type="file" name="file1">

@@ -14,8 +14,8 @@
         <nav class=""> 
             <div class="logo">
                 <a href="index.php" id="logo">
-                    <!--<img src="site-images/logo.jpeg" alt="" height="80px" width="300px">-->
-                    Logo sajta
+                    <img src="site-images/logo.png" alt="" height="80px" width="300px">
+                    <!--Logo sajta-->
                 </a>
             </div>
             <ul id="navBarUl">

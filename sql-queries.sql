@@ -73,7 +73,7 @@ CREATE TABLE ads(
 	date_created datetime not null,
 	user_id int not null,
 	ad_status_id int not null,
-	telephone varchar(100) character set utf8 null,
+	contact varchar(100) character set utf8 null,
 	super_category_id int not null,
 	FOREIGN KEY (country_id) REFERENCES sf_country(country_id),
 	FOREIGN KEY (ad_category_id) REFERENCES sf_ad_category(ad_category_id),

@@ -4,7 +4,7 @@
 
 <!-- reset lozinke poruke -->
 <?php if(isset($_GET['passwordChanged']) && $_GET['passwordChanged']==1): ?>
-    <div class="messageSuccess">Uspešno ste se resetovali lozinku. Ulogujete se sa novom lozinkom.</div>
+    <div class="messageSuccess">Uspešno ste se resetovali lozinku, proverite vas email.</div>
 <?php endif; ?>
 <?php if(isset($_GET['passwordChanged']) && $_GET['passwordChanged']==0): ?>
     <div class="messageUnsuccess">Resetovanje lozinke nije uspelo! Proverite email adresu.</div>
@@ -12,7 +12,7 @@
 
 <!-- logovanje poruke -->
 <?php if(isset($_GET['userLogged']) && $_GET['userLogged']==1): ?>
-    <div class="messageSuccess">Uspešno ste se logovali.</div>
+    <div class="messageSuccess">Uspešno ste se ulogovali.</div>
 <?php endif; ?>
 <?php if(isset($_GET['userLogged']) && $_GET['userLogged']==0): ?>
     <div class="messageUnsuccess">Logovanje nije uspelo!</div>

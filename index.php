@@ -76,7 +76,7 @@
                 <div class="second">
                     <p id="seen">Viđeno: <?php echo $x->seen; ?></p>
                     <p id="city">Mesto: <?php echo $x->city; ?></p>
-                    <p id="price">Cena: <?php echo $x->price.' '.$x->currency; ?></p>
+                    <!--<p id="price">Cena: <?php // echo $x->price.' '.$x->currency; ?></p>-->
                 </div>
             </div>
             

@@ -8,6 +8,7 @@ $name = $_POST['name'];
 $countryId = $_POST['countryId'];
 $city = $_POST['city'];
 $telephone = $_POST['telephone'];
+$password = $_POST['password'];
 $userId = $_SESSION['user']->user_id;
 
 //Ako korisnik nije ulogovan salje ga na log im stranicu
@@ -27,7 +28,7 @@ if(isset($filePath)){
     $user->updateUserImage($filePath,$userId);
 }
 
-$user->updateUser($name,$countryId,$city,$telephone,$userId);
+$user->updateUser($name,$countryId,$city,$telephone,$password,$userId);
 
 header("Location: ../view-user.php");
 

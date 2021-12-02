@@ -62,8 +62,10 @@
                 <div class="second">
                     <p id="seen">Viđeno: <?php echo $x->seen; ?></p>
                     <p id="city">Mesto: <?php echo $x->city; ?></p>
-                    <p id="city">Telefon: <?php echo $x->telephone; ?></p>
-                    <p id="price">Cena: <?php echo $x->price.' '.$x->currency; ?></p>
+                    <p id="city">Kontakt: <?php echo $x->contact; ?></p>
+                    <?php if($x->price>0): ?>
+                        <p id="price">Cena: <?php echo $x->price.' '.$x->currency; ?></p>
+                    <?php endif; ?>
                 </div>
             </div>
         </article>

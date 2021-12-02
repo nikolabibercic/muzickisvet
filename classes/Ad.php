@@ -176,10 +176,10 @@
             return $result;
         }
 
-        public function insertAd($title,$text,$countryId,$city,$categoryId,$price,$currencyId,$userId,$telephone,$superCategoryId){
+        public function insertAd($title,$text,$countryId,$city,$categoryId,$price,$currencyId,$userId,$contact,$superCategoryId){
             $sql = "insert into ads values(null,?,?,?,?,?,?,?,?,?,CURRENT_TIMESTAMP(),?,?,?,?) ";
             $query = $this->conn->prepare($sql);
-            $check = $query->execute([$title,$text,$countryId,$city,$categoryId,1,$price,$currencyId,0,$userId,1,$telephone,$superCategoryId]);
+            $check = $query->execute([$title,$text,$countryId,$city,$categoryId,1,$price,$currencyId,0,$userId,1,$contact,$superCategoryId]);
             $last_id = $this->conn->lastInsertId();
 
             if($check){

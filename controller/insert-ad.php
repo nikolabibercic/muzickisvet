@@ -13,7 +13,7 @@
         $price = $_POST['price'];
         $currencyId = $_POST['currencyId'];
         $userId = $_SESSION['user']->user_id;
-        $telephone = $_POST['telephone'];
+        $contact = $_POST['contact'];
 
         $currencyId = $_POST['currencyId'];
 
@@ -38,7 +38,7 @@
             header('Location: view-log-in.php#logInForm');
         }else{
 
-            $last_id = $ad->insertAd($title,$text,$countryId,$city,$categoryId,$price,$currencyId,$userId,$telephone,$superCategoryId);
+            $last_id = $ad->insertAd($title,$text,$countryId,$city,$categoryId,$price,$currencyId,$userId,$contact,$superCategoryId);
 
             //Upload i insert slika oglasa
             if(isset($image1)){
