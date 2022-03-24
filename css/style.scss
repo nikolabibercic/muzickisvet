@@ -952,3 +952,25 @@ insert ad button
         color: $primaryColor;
     }
 }
+/************************
+no ads
+************************/
+.noAds {
+    color: $secondaryColor;
+    font-weight: 700;
+    padding: 5px;
+    font-size: 1.2rem;
+    margin-bottom: 50px;
+    @include flex(space-between,center,row);
+    @media(max-width: 767px) {
+        @include flex(space-between,center,column);
+    }
+    .insertAdButton2 {
+        background-color: rgb(10, 233, 10);
+        border-radius: 10px;
+        cursor: pointer;
+        color: $white;
+        font-weight: 700;
+        padding: 5px;
+    }
+}

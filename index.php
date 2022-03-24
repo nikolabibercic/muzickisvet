@@ -51,8 +51,19 @@
 
 
 <section class="adDisplay containerAds">
-    <?php $result = $ad->selectAds($search,$city,$tag1,$tag2,$tag3,$tag4,$tag5,$tag6,$tag7,$tag8,$tag9,$categoryId,$this_page_first_result,$results_per_page); foreach($result as $x):  ?>  
+    <?php
+    
+    $result = $ad->selectAds($search,$city,$tag1,$tag2,$tag3,$tag4,$tag5,$tag6,$tag7,$tag8,$tag9,$categoryId,$this_page_first_result,$results_per_page); 
+    
+    if(!$result){
+        echo '<div class="noAds">Trenutno nema aktivnih oglasa. <a class="insertAdButton2" href="view-insert-ad.php?#insertAdForm">Besplatno postavite oglas.</a></div>';
+    }
+
+    foreach($result as $x): 
+    
+    ?>  
         <article class="ad">
+
 
             <?php  $result = $ad->selectAdFirstImage($x->ad_id); ?>
                 <!--Ako oglas ima sliku prikazuje sliku-->
