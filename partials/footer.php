@@ -10,7 +10,7 @@
         <section class=" footerSection2 container2">
             <ul>
                 <li><a href="view-contact.php">Uslovi oglašavanja</a></li>
-                <li><a href="view-contact.php">Kontakt</a></li>
+                <li><a href="view-contact.php#contactForm">Kontakt</a></li>
             </ul>
             <p>SvetMuzicara.com &copy; All rights reserved.</p>
         </section>

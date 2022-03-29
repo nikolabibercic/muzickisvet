@@ -56,7 +56,7 @@
     $result = $ad->selectAds($search,$city,$tag1,$tag2,$tag3,$tag4,$tag5,$tag6,$tag7,$tag8,$tag9,$categoryId,$this_page_first_result,$results_per_page); 
     
     if(!$result){
-        echo '<div class="noAds">Trenutno nema aktivnih oglasa. <a class="insertAdButton2" href="view-insert-ad.php?#insertAdForm">Besplatno postavite oglas.</a></div>';
+        echo '<div class="noAds">Trenutno nema aktivnih oglasa. &nbsp <a class="insertAdButton2" href="view-insert-ad.php?#insertAdForm">Besplatno postavite oglas.</a></div>';
     }
 
     foreach($result as $x): 

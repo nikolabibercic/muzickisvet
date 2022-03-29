@@ -52,7 +52,7 @@
                 $from = 'svetmuzicara@svetmuzicara.com';
                 $to = $email;
                 $subject = 'Svet muzicara: Promena lozinke';
-                $message = 'Nova lozinka je: '.$newPassword.'<a href="www.svetmuzicara.com/view-log-in.php"> ulogujte se</a>';
+                $message = 'Nova lozinka je: '.$newPassword.' www.svetmuzicara.com/view-log-in.php';
                 $header = 'FROM: '.$from;
         
                 mail($to,$subject,$message,$header);

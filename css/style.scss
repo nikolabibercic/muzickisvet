@@ -169,6 +169,64 @@ header {
     }
 }
 /************************
+contact form
+************************/
+.contactForm {
+    margin-bottom: 60px;
+    padding: $padding;
+    @media(max-width: 767px) {
+        padding: 10px 0;
+        width: 100%;
+    }
+    h2{
+        text-align: center;
+        font-size: 3rem;
+        color: $primaryColor;
+        margin-bottom: 20px;
+        margin-top: 50px;
+        @media(max-width: 767px) {
+            font-size: 2.5rem;
+        }
+    }
+    form {
+        background: $secondaryColor2;
+        padding: $padding;
+        @include flex(space-between,center,column);
+        input {
+            width: 50%;
+            margin-bottom: 20px;
+            padding: 10px 0;
+            padding-left: 10px;
+            font-family: 'Playfair Display', serif;
+            border: 3px solid $primaryColor;
+            text-align: center;
+            color: black;
+            font-size: 16px;
+            border-radius: 10px;
+            @media(max-width: 767px) {
+                width: 80%;
+            }
+        }
+        textarea {
+            width: 50%;
+            font-family: 'Playfair Display', serif;
+            border: 3px solid $primaryColor;
+            font-size: 16px;
+            border-radius: 10px;
+            @media(max-width: 767px) {
+                width: 80%;
+            }
+        }
+        button {
+            @include btn;
+            margin-top: 30px;
+            @media(max-width: 767px) {
+                margin-bottom: 20px;
+            }
+        }
+    }  
+}
+/************************
 log in form
 ************************/
 .logInRegisterForm {
