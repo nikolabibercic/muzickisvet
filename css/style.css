@@ -85,13 +85,9 @@ header nav {
   background-color: #007ec3;
 }
 
-header nav .logo a {
-  color: white;
-}
-
 header nav .logo a img {
+  display: block;
   width: 80px;
-  height: 80px;
 }
 
 header nav ul {
@@ -213,6 +209,40 @@ header hgroup {
 @media (max-width: 767px) {
   header hgroup {
     height: 60vh;
+  }
+}
+
+/************************
+conditions
+************************/
+.conditions {
+  margin-bottom: 60px;
+}
+
+.conditions h2 {
+  text-align: center;
+  font-size: 3rem;
+  color: #007ec3;
+  margin-bottom: 20px;
+  margin-top: 50px;
+}
+
+@media (max-width: 767px) {
+  .conditions h2 {
+    font-size: 2.5rem;
+  }
+}
+
+.conditions p {
+  text-align: justify;
+  font-size: 1.5rem;
+  color: #007ec3;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 767px) {
+  .conditions p {
+    font-size: 1rem;
   }
 }
 
@@ -1911,10 +1941,6 @@ footer {
   footer .container2 {
     width: 80%;
   }
-}
-
-footer .footerSection1 {
-  margin-top: 20px;
 }
 
 footer .footerSection1 ul {

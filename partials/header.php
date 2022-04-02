@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sr">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="site-images/logo.png" type="image/png" sizes="16x16">
     <title>Svet muzičara</title>
     <link rel="stylesheet" href="css/style.css">
     <script src="https://kit.fontawesome.com/53eca7a38b.js" crossorigin="anonymous"></script>
@@ -14,7 +15,7 @@
         <nav class=""> 
             <div class="logo">
                 <a href="index.php" id="logo">
-                    <img src="site-images/logo.png" alt="" height="80px" width="300px">
+                    <img src="site-images/logo.png" alt="">
                     <!--Logo sajta-->
                 </a>
             </div>
